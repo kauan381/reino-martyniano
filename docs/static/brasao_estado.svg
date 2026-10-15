@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1150"
+     width="1400" height="1150" role="img" aria-label="Brasao de Estado do Reino Martyniano">
+
+<defs>
+  <linearGradient id="ouro" x1="0.1" y1="0" x2="0.4" y2="1">
+    <stop offset="0" stop-color="#fdf0b8"/><stop offset="0.3" stop-color="#f0cf6a"/>
+    <stop offset="0.58" stop-color="#cfa530"/><stop offset="0.82" stop-color="#a37c22"/>
+    <stop offset="1" stop-color="#7a5a10"/>
+  </linearGradient>
+  <linearGradient id="ouroClaro" x1="0" y1="0" x2="0.2" y2="1">
+    <stop offset="0" stop-color="#fff8da"/><stop offset="0.5" stop-color="#eccb62"/>
+    <stop offset="1" stop-color="#a37c22"/>
+  </linearGradient>
+  <linearGradient id="vermelho" x1="0" y1="0" x2="0.25" y2="1">
+    <stop offset="0" stop-color="#bd2a3e"/><stop offset="1" stop-color="#7b1220"/>
+  </linearGradient>
+  <linearGradient id="azul" x1="0" y1="0" x2="0.25" y2="1">
+    <stop offset="0" stop-color="#26509f"/><stop offset="1" stop-color="#122b63"/>
+  </linearGradient>
+  <linearGradient id="verdeFolha" x1="0.2" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#84c95f"/><stop offset="1" stop-color="#2f6828"/>
+  </linearGradient>
+  <linearGradient id="fita" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#b02335"/><stop offset="0.5" stop-color="#8c1526"/>
+    <stop offset="1" stop-color="#5a0c17"/>
+  </linearGradient>
+  <clipPath id="recorteEscudo">
+    <path d="M 485 330 H 915 V 660 C 915 780 810 850 700 886 C 590 850 485 780 485 660 Z"/>
+  </clipPath>
+</defs>
+
+<g transform="translate(370,952) scale(-1,1)">
+<g>
+  <g transform="translate(58,-124)"><path d="M 0 0 C 22 -77.39999999999999 16 -196.08 0 -258 C -16 -196.08 -22 -77.39999999999999 0 0 Z" transform="rotate(122)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 22 -75.0 16 -190.0 0 -250 C -16 -190.0 -22 -75.0 0 0 Z" transform="rotate(146)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 22 -67.8 16 -171.76 0 -226 C -16 -171.76 -22 -67.8 0 0 Z" transform="rotate(170)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/></g>
+  <path d="M 25 -140 L -4 0 M 62 -140 L 80 0" stroke="url(#ouro)" stroke-width="9"
+        fill="none" stroke-linecap="round"/>
+  <path d="M -4 0 L -22 12 M -4 0 L -6 16 M -4 0 L 10 12
+           M 80 0 L 62 12 M 80 0 L 78 16 M 80 0 L 94 12"
+        stroke="url(#ouroClaro)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="38" cy="-262" rx="44" ry="132" fill="url(#ouro)" stroke="#6b4d0c"
+           stroke-width="3" transform="rotate(-9 38 -262)"/>
+  <g stroke="#a37c22" stroke-width="2.2" fill="none" opacity="0.5">
+    <path d="M -6 -326 C 22 -308 50 -310 68 -324"/>
+    <path d="M -11 -284 C 20 -264 50 -266 71 -282"/>
+    <path d="M -13 -240 C 18 -222 50 -224 73 -240"/>
+  </g>
+  <path d="M 2 -338 C -18 -296 -19 -234 -6 -184" stroke="#fff8da" stroke-width="7"
+        fill="none" opacity="0.3" stroke-linecap="round"/>
+  <g transform="translate(64,-330)"><path d="M 0 0 C 50.0 -54.88 35.0 -145.04 0 -196.0 C -35.0 -145.04 -50.0 -54.88 0 0 Z" transform="rotate(12.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 47.875 -58.59 33.512499999999996 -154.845 0 -209.25 C -33.512499999999996 -154.845 -47.875 -58.59 0 0 Z" transform="rotate(23.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 45.75 -62.300000000000004 32.025 -164.65 0 -222.5 C -32.025 -164.65 -45.75 -62.300000000000004 0 0 Z" transform="rotate(35.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 43.625 -66.01 30.537499999999998 -174.45499999999998 0 -235.75 C -30.537499999999998 -174.45499999999998 -43.625 -66.01 0 0 Z" transform="rotate(46.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 41.5 -69.72000000000001 29.049999999999997 -184.26 0 -249.0 C -29.049999999999997 -184.26 -41.5 -69.72000000000001 0 0 Z" transform="rotate(58.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 39.375 -73.43 27.5625 -194.065 0 -262.25 C -27.5625 -194.065 -39.375 -73.43 0 0 Z" transform="rotate(69.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 37.25 -77.14 26.075 -203.87 0 -275.5 C -26.075 -203.87 -37.25 -77.14 0 0 Z" transform="rotate(81.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 35.125 -80.85000000000001 24.5875 -213.675 0 -288.75 C -24.5875 -213.675 -35.125 -80.85000000000001 0 0 Z" transform="rotate(92.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 33.0 -84.56 23.099999999999998 -223.48 0 -302.0 C -23.099999999999998 -223.48 -33.0 -84.56 0 0 Z" transform="rotate(104.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/></g>
+  <path d="M 46 -352 C 34 -384 22 -400 8 -410 L 42 -424 C 56 -406 66 -382 70 -354 Z"
+        fill="url(#ouro)" stroke="#6b4d0c" stroke-width="3"/>
+  <circle cx="4" cy="-412" r="35" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+  <path d="M -16 -424 L -70 -406 L -16 -392 Z" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+  <circle cx="-6" cy="-424" r="6" fill="#241a05"/>
+  <path d="M 32 -438 C 16 -478 40 -502 22 -540 C 62 -516 66 -464 50 -434 Z"
+        fill="url(#ouro)" stroke="#6b4d0c" stroke-width="3"/>
+  <path d="M 40 -436 C 44 -470 62 -486 78 -500 C 76 -466 62 -444 48 -430 Z"
+        fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="2.6"/>
+</g></g><g transform="translate(1030,952)">
+<g>
+  <g transform="translate(58,-124)"><path d="M 0 0 C 22 -77.39999999999999 16 -196.08 0 -258 C -16 -196.08 -22 -77.39999999999999 0 0 Z" transform="rotate(122)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 22 -75.0 16 -190.0 0 -250 C -16 -190.0 -22 -75.0 0 0 Z" transform="rotate(146)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 22 -67.8 16 -171.76 0 -226 C -16 -171.76 -22 -67.8 0 0 Z" transform="rotate(170)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/></g>
+  <path d="M 25 -140 L -4 0 M 62 -140 L 80 0" stroke="url(#ouro)" stroke-width="9"
+        fill="none" stroke-linecap="round"/>
+  <path d="M -4 0 L -22 12 M -4 0 L -6 16 M -4 0 L 10 12
+           M 80 0 L 62 12 M 80 0 L 78 16 M 80 0 L 94 12"
+        stroke="url(#ouroClaro)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="38" cy="-262" rx="44" ry="132" fill="url(#ouro)" stroke="#6b4d0c"
+           stroke-width="3" transform="rotate(-9 38 -262)"/>
+  <g stroke="#a37c22" stroke-width="2.2" fill="none" opacity="0.5">
+    <path d="M -6 -326 C 22 -308 50 -310 68 -324"/>
+    <path d="M -11 -284 C 20 -264 50 -266 71 -282"/>
+    <path d="M -13 -240 C 18 -222 50 -224 73 -240"/>
+  </g>
+  <path d="M 2 -338 C -18 -296 -19 -234 -6 -184" stroke="#fff8da" stroke-width="7"
+        fill="none" opacity="0.3" stroke-linecap="round"/>
+  <g transform="translate(64,-330)"><path d="M 0 0 C 50.0 -54.88 35.0 -145.04 0 -196.0 C -35.0 -145.04 -50.0 -54.88 0 0 Z" transform="rotate(12.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 47.875 -58.59 33.512499999999996 -154.845 0 -209.25 C -33.512499999999996 -154.845 -47.875 -58.59 0 0 Z" transform="rotate(23.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 45.75 -62.300000000000004 32.025 -164.65 0 -222.5 C -32.025 -164.65 -45.75 -62.300000000000004 0 0 Z" transform="rotate(35.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 43.625 -66.01 30.537499999999998 -174.45499999999998 0 -235.75 C -30.537499999999998 -174.45499999999998 -43.625 -66.01 0 0 Z" transform="rotate(46.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 41.5 -69.72000000000001 29.049999999999997 -184.26 0 -249.0 C -29.049999999999997 -184.26 -41.5 -69.72000000000001 0 0 Z" transform="rotate(58.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 39.375 -73.43 27.5625 -194.065 0 -262.25 C -27.5625 -194.065 -39.375 -73.43 0 0 Z" transform="rotate(69.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 37.25 -77.14 26.075 -203.87 0 -275.5 C -26.075 -203.87 -37.25 -77.14 0 0 Z" transform="rotate(81.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 35.125 -80.85000000000001 24.5875 -213.675 0 -288.75 C -24.5875 -213.675 -35.125 -80.85000000000001 0 0 Z" transform="rotate(92.5)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/><path d="M 0 0 C 33.0 -84.56 23.099999999999998 -223.48 0 -302.0 C -23.099999999999998 -223.48 -33.0 -84.56 0 0 Z" transform="rotate(104.0)" fill="url(#ouro)" stroke="#6b4d0c" stroke-width="2.4"/></g>
+  <path d="M 46 -352 C 34 -384 22 -400 8 -410 L 42 -424 C 56 -406 66 -382 70 -354 Z"
+        fill="url(#ouro)" stroke="#6b4d0c" stroke-width="3"/>
+  <circle cx="4" cy="-412" r="35" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+  <path d="M -16 -424 L -70 -406 L -16 -392 Z" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+  <circle cx="-6" cy="-424" r="6" fill="#241a05"/>
+  <path d="M 32 -438 C 16 -478 40 -502 22 -540 C 62 -516 66 -464 50 -434 Z"
+        fill="url(#ouro)" stroke="#6b4d0c" stroke-width="3"/>
+  <path d="M 40 -436 C 44 -470 62 -486 78 -500 C 76 -466 62 -444 48 -430 Z"
+        fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="2.6"/>
+</g></g>
+<path d="M 485 330 H 915 V 660 C 915 780 810 850 700 886 C 590 850 485 780 485 660 Z"
+      fill="#f7f1de" stroke="#6b4d0c" stroke-width="4"/>
+
+<g clip-path="url(#recorteEscudo)">
+  <rect x="485" y="330" width="215" height="290" fill="url(#vermelho)"/>
+  <rect x="700" y="330" width="215" height="290" fill="url(#azul)"/>
+  <rect x="485" y="620" width="215" height="280" fill="url(#azul)"/>
+  <rect x="700" y="620" width="215" height="280" fill="#dcb247"/>
+</g>
+
+<g transform="translate(592,478) rotate(-30)">
+  <rect x="-62" y="-32" width="124" height="48" rx="11" fill="url(#ouroClaro)" stroke="#7a5a10" stroke-width="3"/>
+  <rect x="-15" y="12" width="30" height="112" rx="10" fill="url(#ouroClaro)" stroke="#7a5a10" stroke-width="3"/>
+  <rect x="-46" y="-24" width="34" height="30" rx="7" fill="#fff6d0" opacity="0.5"/>
+</g>
+<path d="M 807 566 C 807 500 807 460 807 424" stroke="#255022" stroke-width="6" fill="none"/><path d="M 0 0 C 28 -24.599999999999998 28 -62.32 0 -82 C -28 -62.32 -28 -24.599999999999998 0 0 Z" transform="translate(807,432) rotate(0)" fill="url(#verdeFolha)" stroke="#255022" stroke-width="2.6"/><path d="M 0 0 C 23 -21.0 23 -53.2 0 -70 C -23 -53.2 -23 -21.0 0 0 Z" transform="translate(807,486) rotate(54)" fill="url(#verdeFolha)" stroke="#255022" stroke-width="2.6"/><path d="M 0 0 C 23 -21.0 23 -53.2 0 -70 C -23 -53.2 -23 -21.0 0 0 Z" transform="translate(807,486) rotate(-54)" fill="url(#verdeFolha)" stroke="#255022" stroke-width="2.6"/><path d="M 0 0 C 20 -17.4 20 -44.08 0 -58 C -20 -44.08 -20 -17.4 0 0 Z" transform="translate(807,538) rotate(72)" fill="url(#verdeFolha)" stroke="#255022" stroke-width="2.6"/><path d="M 0 0 C 20 -17.4 20 -44.08 0 -58 C -20 -44.08 -20 -17.4 0 0 Z" transform="translate(807,538) rotate(-72)" fill="url(#verdeFolha)" stroke="#255022" stroke-width="2.6"/>
+
+<g transform="translate(592,764)">
+  <path d="M -46 -10 H 46 V -98 H 31 V -122 H 16 V -98 H -16 V -122 H -31 V -98 H -46 Z"
+        fill="url(#ouroClaro)" stroke="#7a5a10" stroke-width="3.2"/>
+  <rect x="-31" y="-60" width="62" height="52" rx="2" fill="#8a6a12" opacity="0.32"/>
+  <path d="M -17 0 V -24 A 17 17 0 0 1 17 -24 V 0 Z" fill="#7a5a10" opacity="0.66"/>
+  <circle cx="-22" cy="-72" r="8" fill="#8a6a12" opacity="0.45"/>
+  <circle cx="22" cy="-72" r="8" fill="#8a6a12" opacity="0.45"/>
+</g>
+
+<g transform="translate(807,756)">
+  <path d="M 0 -92 L 18 -28 L 82 -54 L 39 -6 L 104 0 L 39 6 L 82 54 L 18 28 L 0 92
+           L -18 28 L -82 54 L -39 6 L -104 0 L -39 -6 L -82 -54 L -18 -28 Z"
+        fill="#fff8da" stroke="#a37c22" stroke-width="3.6" stroke-linejoin="round"/>
+  <path d="M 0 -44 L 9 -13 L 39 0 L 9 13 L 0 44 L -9 13 L -39 0 L -9 -13 Z"
+        fill="#dcb247" opacity="0.6"/>
+</g>
+
+<path d="M 485 330 H 915 V 660 C 915 780 810 850 700 886 C 590 850 485 780 485 660 Z"
+      fill="none" stroke="url(#ouroClaro)" stroke-width="17" stroke-linejoin="round"/>
+<path d="M 485 330 H 915 V 660 C 915 780 810 850 700 886 C 590 850 485 780 485 660 Z"
+      fill="none" stroke="#6b4d0c" stroke-width="3" stroke-linejoin="round"/>
+
+<g transform="translate(700,336)">
+  <path d="M -112 8 C -112 -76 -60 -120 0 -128 C 60 -120 112 -76 112 8 Z"
+        fill="url(#vermelho)" stroke="#6b4d0c" stroke-width="2.6"/>
+  <path d="M -112 2 C -104 -78 -54 -124 0 -132" fill="none" stroke="url(#ouro)"
+        stroke-width="14" stroke-linecap="round"/>
+  <path d="M 112 2 C 104 -78 54 -124 0 -132" fill="none" stroke="url(#ouro)"
+        stroke-width="14" stroke-linecap="round"/>
+  <path d="M -58 6 C -54 -56 -28 -94 0 -102" fill="none" stroke="url(#ouroClaro)"
+        stroke-width="9" stroke-linecap="round"/>
+  <path d="M 58 6 C 54 -56 28 -94 0 -102" fill="none" stroke="url(#ouroClaro)"
+        stroke-width="9" stroke-linecap="round"/>
+  <path d="M -152 -10 C -152 30 152 30 152 -10 L 152 8 C 152 48 -152 48 -152 8 Z"
+        fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3.2"/>
+  <circle cx="-110" cy="14" r="13" fill="#b02335" stroke="#6b4d0c" stroke-width="2.6"/>
+  <circle cx="-55" cy="20" r="12" fill="#26509f" stroke="#6b4d0c" stroke-width="2.6"/>
+  <circle cx="0" cy="23" r="14" fill="#b02335" stroke="#6b4d0c" stroke-width="2.6"/>
+  <circle cx="55" cy="20" r="12" fill="#26509f" stroke="#6b4d0c" stroke-width="2.6"/>
+  <circle cx="110" cy="14" r="13" fill="#b02335" stroke="#6b4d0c" stroke-width="2.6"/>
+  <circle cx="0" cy="-142" r="17" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+  <path d="M -8 -156 L 0 -206 L 8 -156 Z" fill="url(#ouroClaro)" stroke="#6b4d0c" stroke-width="3"/>
+</g>
+
+<g transform="translate(700,906)">
+  <line x1="-322" y1="0" x2="-62" y2="0" stroke="url(#ouroClaro)" stroke-width="2.4"/>
+  <line x1="62" y1="0" x2="322" y2="0" stroke="url(#ouroClaro)" stroke-width="2.4"/>
+  <path d="M 0 -12 L 12 0 L 0 12 L -12 0 Z" fill="url(#ouroClaro)"/>
+  <text x="-168" y="9" text-anchor="middle" font-family="'EB Garamond',Georgia,serif"
+        font-size="21" font-weight="700" letter-spacing="3" fill="url(#ouroClaro)">COROA DE ESTADO</text>
+  <text x="168" y="9" text-anchor="middle" font-family="'EB Garamond',Georgia,serif"
+        font-size="21" font-weight="700" letter-spacing="3" fill="url(#ouroClaro)">JAVE SEJA LOUVADO</text>
+</g>
+
+<g transform="translate(700,1024)">
+  <path d="M -330 -46 L -404 0 L -330 46 L -292 46 L -292 -46 Z" fill="#5a0c17"
+        stroke="#6b4d0c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M 330 -46 L 404 0 L 330 46 L 292 46 L 292 -46 Z" fill="#5a0c17"
+        stroke="#6b4d0c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M -300 -50 C -120 -72 120 -72 300 -50 L 300 50 C 120 72 -120 72 -300 50 Z"
+        fill="url(#fita)" stroke="#6b4d0c" stroke-width="3.6"/>
+  <path d="M -284 -36 C -110 -54 110 -54 284 -36 L 284 -25 C 110 -43 -110 -43 -284 -25 Z"
+        fill="#d8b14a" opacity="0.32"/>
+  <text x="0" y="17" text-anchor="middle" font-family="'EB Garamond',Georgia,serif"
+        font-size="60" font-weight="700" letter-spacing="6.5" fill="url(#ouroClaro)"
+        stroke="#4a3406" stroke-width="1.1">REINO MARTYNIANO</text>
+</g>
+</svg>
