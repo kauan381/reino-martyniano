@@ -41,5 +41,17 @@
     "tipo": "Ato Legislativo",
     "estado": "sancionado",
     "publicado_em": "2026-10-05T18:20:37"
+  },
+  {
+    "designador": "AL.03.2026",
+    "titulo": "Ato Legislativo nº 03/2026",
+    "epigrafe": "Dispõe sobre o Direito Nobiliárquico, o Pariato Martyniano, a Escada Nobiliárquica, as Ordens Reais, o Estatuto Consortial e a Sucessão ao Trono Martyniano, e dá outras providências.",
+    "template": "atos/AL.03.2026.html",
+    "data": "2026-10-07",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Ato Legislativo",
+    "estado": "sancionado",
+    "publicado_em": "2026-10-15T12:37:01"
   }
 ]
