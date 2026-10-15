@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diário Oficial — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/leis">Leis</a><a href="/ministerios">Ministérios</a><a href="/instituicoes">Instituições</a><a href="/noticias">Notícias</a></nav>
+</header>
+<main class="form-page">
+  <div class="card wide">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Diário Oficial</span></div>
+    <h2>Diário Oficial do Reino</h2>
+    <p class="sub-text">Atos, normas e publicações oficiais do Estado.</p>
+
+    {% if atos %}
+    <h3 class="sec">Atos publicados</h3>
+    <div class="atos-lista">
+      {% for a in atos %}
+      <a class="ato-item" href="/diario-oficial/{{ a.designador }}">
+        <span class="ato-desig">{{ a.designador }}</span>
+        <span class="ato-corpo">
+          <strong>{{ a.titulo }}</strong>
+          {% if a.ementa %}<span class="ato-ementa">{{ a.ementa }}</span>{% endif %}
+        </span>
+        <span class="ato-data">{{ a.data or 'sem data' }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="aviso-vazio">
+      <p>Nenhum ato publicado até o momento. Os atos aprovados e assinados são publicados aqui pelo Ofício de Publicação.</p>
+    </div>
+    {% endif %}
+
+    <h3 class="sec">Instrumentos Normativos</h3>
+    <ul class="lista">
+      {% for c in est.categorias_leis %}<li>{{ c }}</li>{% endfor %}
+    </ul>
+
+    <h3 class="sec">Instrumentos de Regulação</h3>
+    <ul class="lista">
+      {% for c in est.categorias_regulacao %}<li>{{ c }}</li>{% endfor %}
+    </ul>
+
+    <h3 class="sec">Atos de Pessoal</h3>
+    <ul class="lista">{% for a in est.atos_pessoal %}<li>{{ a }}</li>{% endfor %}</ul>
+
+    <h3 class="sec">Atos Diversos</h3>
+    <ul class="lista">{% for a in est.atos_diversos %}<li>{{ a }}</li>{% endfor %}</ul>
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Diário Oficial</footer>
+</body>
+</html>

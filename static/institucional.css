@@ -1,0 +1,403 @@
+/* ============================================================
+   institucional.css — Paginas de conteudo do Portal do Reino
+   Reusa os nomes declarados em style.css (:root). Nao redefine
+   cor nem medida que ja tenha nome. Nada de desenho novo:
+   mesma identidade, apenas tipografia de leitura longa.
+   ============================================================ */
+
+/* === cabecalho da pagina === */
+.pag-topo{
+  background:linear-gradient(160deg,rgba(20,36,70,.9),rgba(8,14,30,.94));
+  border-bottom:1px solid var(--borda);
+  padding:52px 0 46px;
+}
+.pag-topo .container{padding-top:0;padding-bottom:0}
+.trilha{
+  display:block;font-size:11px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--ouro);margin-bottom:16px;
+}
+.trilha a{color:var(--sub);text-decoration:none}
+.trilha a:hover{color:var(--ouro-claro)}
+.pag-topo h1{
+  font-size:38px;font-weight:900;line-height:1.18;letter-spacing:.6px;
+  margin-bottom:16px;
+  background:linear-gradient(135deg,#f3e5ab,#d4af37);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.pag-topo p{color:#c3d0e8;font-size:15.5px;max-width:760px;line-height:1.8}
+
+/* === corpo de leitura === */
+.pag-corpo{padding-top:54px}
+.pag-corpo p{color:#cfdaee;font-size:15.5px;line-height:1.95;margin-bottom:20px;max-width:820px}
+.pag-corpo strong{color:var(--ouro-claro);font-weight:700}
+.pag-corpo em{color:#e6ecf8;font-style:italic}
+.pag-corpo h2{
+  font-size:24px;font-weight:800;letter-spacing:.6px;margin:46px 0 18px;
+  color:var(--ouro-claro);
+}
+.pag-corpo h2:first-child{margin-top:0}
+.pag-corpo h3{font-size:17px;font-weight:700;color:#f0f4fb;margin:0 0 10px}
+.pag-corpo .doc-cabecalho{text-align:center;max-width:820px;margin-bottom:6px}
+.pag-corpo .doc-cabecalho:first-child{font-size:22px;font-weight:800;letter-spacing:4px;color:var(--ouro-claro)}
+.pag-corpo .doc-cabecalho:first-child + .doc-cabecalho{font-size:15px;font-weight:600;letter-spacing:.08em;color:#c3d0e8;margin-bottom:28px}
+
+.fio{width:48px;height:3px;background:linear-gradient(90deg,var(--ouro),transparent);margin-bottom:26px}
+
+/* === caixa de nota === */
+.nota{
+  padding:26px 30px;border-radius:16px;margin:30px 0;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-left:4px solid var(--ouro);
+}
+.nota h4{font-size:15px;font-weight:800;color:var(--ouro-claro);margin-bottom:10px;letter-spacing:.4px}
+.nota p{font-size:14.5px;line-height:1.85;color:var(--sub);margin-bottom:12px;max-width:100%}
+.nota p:last-child{margin-bottom:0}
+
+/* === citacao === */
+.citacao{
+  padding:30px 34px;border-radius:16px;margin:34px 0;
+  background:linear-gradient(135deg,rgba(214,178,60,.12),rgba(61,123,255,.08));
+  border:1px solid rgba(214,178,60,.3);
+}
+.citacao p{font-size:17px;line-height:1.7;color:#eaf0fb;font-style:italic;margin-bottom:14px;max-width:100%}
+.citacao cite{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;color:var(--ouro)}
+
+/* === grade de cartoes === */
+.grade-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0}
+.grade-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0}
+
+.cartao{
+  padding:26px 24px;border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-top:3px solid var(--ouro);
+  transition:all .22s;
+}
+.cartao:hover{border-color:rgba(214,178,60,.5);transform:translateY(-3px);
+  box-shadow:0 16px 34px rgba(0,0,0,.4)}
+.cartao h3{color:var(--ouro-claro);font-size:15.5px;margin-bottom:8px}
+.cartao p{font-size:13.5px;line-height:1.7;color:var(--sub);margin:0;max-width:100%}
+.cartao .num{
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:15px;color:var(--ouro);
+  background:rgba(214,178,60,.12);border:1px solid rgba(214,178,60,.35);
+  margin-bottom:14px;
+}
+
+/* === comparativo === */
+.comparativo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+.comp{padding:28px 26px;border-radius:16px}
+.comp.sim{background:rgba(255,255,255,.06);border:1px solid rgba(214,178,60,.4);border-top:4px solid var(--ouro)}
+.comp.nao{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-top:4px solid rgba(169,184,212,.35)}
+.comp h3{font-size:17px;margin-bottom:4px}
+.comp.sim h3{color:var(--ouro-claro)}
+.comp.nao h3{color:var(--sub)}
+.comp .sub{display:block;font-size:10.5px;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--sub);margin-bottom:16px}
+.comp.sim .sub{color:var(--ouro)}
+.comp ul{list-style:none;padding:0;margin:0}
+.comp li{
+  font-size:13.5px;line-height:1.6;color:#c3d0e8;
+  padding:9px 0 9px 22px;position:relative;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.comp li:last-child{border-bottom:none}
+.comp.sim li::before{content:'—';position:absolute;left:0;top:9px;color:var(--ouro);font-weight:800}
+.comp.nao li::before{content:'×';position:absolute;left:0;top:8px;color:rgba(169,184,212,.6);font-weight:800}
+
+/* === linha do tempo === */
+.tempo{position:relative;padding-left:40px;margin:34px 0}
+.tempo::before{
+  content:'';position:absolute;left:13px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--ouro),rgba(214,178,60,.08));
+}
+.marco{position:relative;padding-bottom:38px}
+.marco:last-child{padding-bottom:0}
+.marco::before{
+  content:'';position:absolute;left:-33px;top:7px;width:13px;height:13px;
+  border-radius:50%;background:#070d1c;border:3px solid var(--ouro);
+}
+.marco .ano{
+  display:inline-block;padding:5px 14px;border-radius:40px;margin-bottom:12px;
+  background:rgba(214,178,60,.14);border:1px solid rgba(214,178,60,.35);
+  color:var(--ouro-claro);font-size:10.5px;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.marco h3{font-size:19px;color:#f0f4fb;margin-bottom:10px}
+.marco p{font-size:14.5px;line-height:1.85;color:#c3d0e8;margin-bottom:12px;max-width:780px}
+.marco .nota{margin-top:16px}
+
+/* === rodape do documento === */
+.rodape-ato{
+  margin-top:52px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:12px;color:var(--sub);letter-spacing:.6px;
+}
+
+/* ============================================================
+   FAIXA DE ENQUADRAMENTO + PERGUNTAS FREQUENTES
+   Usa os nomes de :root do style.css (--ouro, --texto, --sub,
+   --borda, --card). Nao inventa paleta paralela.
+   ============================================================ */
+
+/* === faixa "isso e serio?" da pagina inicial === */
+.pergunta-legitima{
+  display:grid;grid-template-columns:1fr 1fr;gap:38px;
+  padding:38px 40px;margin:38px auto;
+  border-left:3px solid var(--ouro);
+}
+.pergunta-legitima h2{
+  font-size:26px;font-weight:800;letter-spacing:.4px;line-height:1.25;
+  margin:14px 0 18px;color:var(--texto);
+}
+.pergunta-legitima p{line-height:1.9;color:#c3d0e8;font-size:15.5px;margin:0 0 15px}
+.pergunta-legitima strong{color:var(--ouro-claro)}
+.pl-lista{list-style:none;margin:0 0 24px;padding:0}
+.pl-lista li{
+  padding:11px 0 11px 26px;position:relative;line-height:1.75;
+  color:var(--sub);font-size:14.5px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.pl-lista li:last-child{border-bottom:none}
+.pl-lista li::before{
+  content:"";position:absolute;left:0;top:18px;
+  width:8px;height:8px;border:1.5px solid var(--ouro);
+  transform:rotate(45deg);
+}
+.pl-lista li strong{color:var(--texto);font-weight:700}
+.btn-pl{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 22px;border-radius:9px;
+  background:linear-gradient(135deg,var(--ouro),var(--ouro-claro));
+  color:#0b1220;font-weight:800;font-size:13.5px;letter-spacing:.4px;
+  text-decoration:none;border:none;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn-pl:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(214,178,60,.28)}
+.btn-pl .seta{width:16px;height:16px}
+
+/* === perguntas frequentes (accordion) === */
+.faq{display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:900px}
+.qa{
+  border:1px solid var(--borda);border-radius:10px;
+  background:var(--card);overflow:hidden;
+}
+.qa summary{
+  cursor:pointer;padding:20px 56px 20px 22px;position:relative;
+  font-weight:700;font-size:16.5px;color:var(--ouro-claro);
+  list-style:none;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{
+  content:"+";position:absolute;right:22px;top:50%;
+  transform:translateY(-50%);font-size:1.5rem;font-weight:400;
+  color:var(--ouro);line-height:1;
+}
+.qa[open] summary::after{content:"\2013"}
+.qa summary:hover{background:rgba(255,255,255,.03)}
+.qa-corpo{padding:2px 22px 24px}
+.qa-corpo p{line-height:1.9;color:#cfdaee;font-size:15.5px;margin:0 0 15px;max-width:820px}
+.qa-corpo p:last-child{margin-bottom:0}
+.qa-corpo strong{color:var(--ouro-claro)}
+.qa-corpo a{color:var(--ouro-claro);text-decoration:none;border-bottom:1px solid rgba(214,178,60,.45)}
+.qa-corpo a:hover{border-bottom-color:var(--ouro-claro)}
+.faq-fecho{
+  margin:30px 0 0;padding-top:22px;max-width:900px;
+  border-top:1px solid rgba(255,255,255,.1);
+  line-height:1.9;color:#c3d0e8;font-style:italic;font-size:15.5px;
+}
+
+/* === mensagem de boas-vindas da Casa Real === */
+/* Gradiente nos tons do :root do portal (--fundo #070d1c e o
+   gradiente da casa #0b1630 -> #12224a). Nao inventar azul:
+   cor estranha faz o painel parecer remendo colado. */
+.boas-vindas{
+  padding:40px 44px;margin:38px auto;max-width:960px;
+  border-top:2px solid var(--ouro);
+  border-radius:0 0 12px 12px;
+  background:linear-gradient(150deg,rgba(11,22,48,.96) 0%,rgba(7,13,28,.99) 55%,rgba(18,34,74,.94) 100%);
+  box-shadow:
+    0 18px 44px -12px rgba(0,0,0,.75),
+    0 6px 26px -6px rgba(214,178,60,.28);
+}
+.bv-texto{margin:0;position:relative;padding-left:30px}
+.bv-texto::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;
+  width:2px;background:linear-gradient(180deg,var(--ouro),transparent);
+}
+.bv-texto p{
+  line-height:2;color:#cfdaee;font-size:16.5px;margin:0 0 18px;
+}
+.bv-texto p:last-child{margin-bottom:0}
+.bv-lista{
+  list-style:none;margin:0 0 18px;padding:0;
+}
+.bv-lista li{
+  position:relative;padding:7px 0 7px 24px;
+  line-height:1.8;color:#cfdaee;font-size:15.5px;
+}
+.bv-lista li::before{
+  content:"";position:absolute;left:2px;top:16px;
+  width:7px;height:7px;border:1.4px solid var(--ouro);
+  transform:rotate(45deg);
+}
+.bv-assinatura{
+  margin-top:30px;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;gap:3px;
+}
+.bv-nome{
+  font-size:17px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--ouro-claro);
+}
+.bv-cargo{font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+
+/* === aviso de secao sem rol vigente === */
+.aviso-vazio{
+  border-left:3px solid var(--ouro);
+  background:var(--card);
+  border-radius:0 10px 10px 0;
+  padding:26px 28px;margin-top:22px;max-width:860px;
+}
+.aviso-vazio p{
+  line-height:1.9;color:#cfdaee;font-size:15.5px;margin:0 0 15px;
+}
+.aviso-vazio p:last-child{margin-bottom:0}
+.aviso-vazio strong{color:var(--ouro-claro)}
+.aviso-vazio a{color:var(--ouro-claro);text-decoration:none;border-bottom:1px solid rgba(214,178,60,.45)}
+.aviso-vazio a:hover{border-bottom-color:var(--ouro-claro)}
+.aviso-nota{font-size:13.5px;color:var(--sub)}
+
+/* === lista de atos publicados no Diario === */
+.atos-lista{display:flex;flex-direction:column;gap:10px;margin:18px 0 34px}
+.ato-item{
+  display:grid;grid-template-columns:96px 1fr auto;gap:16px;align-items:center;
+  padding:15px 18px;border-radius:10px;text-decoration:none;
+  background:var(--card);border:1px solid var(--borda);
+  color:var(--texto);                      /* sem isto o link herda o azul do navegador */
+  transition:border-color .18s ease,transform .18s ease;
+}
+.ato-item:hover{border-color:var(--ouro);transform:translateX(3px)}
+.ato-item:visited{color:var(--texto)}      /* link ja visitado nao vira roxo */
+.ato-desig{
+  font-family:monospace;font-size:12px;font-weight:700;letter-spacing:.6px;
+  color:var(--ouro-claro);text-align:center;padding:5px 0;
+  border:1px solid rgba(214,178,60,.35);border-radius:6px;
+}
+.ato-corpo{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ato-corpo strong{color:var(--texto);font-size:14.5px;font-weight:700;line-height:1.4}
+.ato-ementa{color:var(--sub);font-size:12.5px;line-height:1.55}
+.ato-data{font-size:12px;color:var(--sub);white-space:nowrap}
+
+/* === pagina do ato publicado === */
+/* ═══════════════════════════════════════════════════════════════
+   FORMA DO ATO PUBLICADO — APROVADA PELO REI EM 29/09/2026
+   Papel marfim, tinta ferro-gálica, tamanho de leitura.
+   O azul-noite fica para o Portal, não para o ato.
+   Skill: reino/forma-do-ato-publicado
+   ═══════════════════════════════════════════════════════════════ */
+.ato-publicado{
+  --p-marflin:#f4efe2;
+  --p-linha:#e6ddc9;
+  --p-ouro:#9a7d21;
+  --p-tinta:#3b2f1e;          /* ferro-gálica */
+  background:var(--p-marflin);
+  border-radius:4px;
+  padding:44px 52px 52px;
+  max-width:900px;
+  margin:0 auto;
+  box-shadow:0 2px 18px rgba(0,0,0,.28);
+}
+.ato-publicado h1{
+  font-family:'Playfair Display',serif;font-size:26px;line-height:1.3;
+  color:var(--p-tinta);text-align:center;margin:0 0 10px;
+}
+.ato-publicado h2{
+  font-family:'Playfair Display',serif;font-size:17px;color:var(--p-ouro);
+  margin:32px 0 10px;letter-spacing:.3px;
+}
+.ato-publicado h3{
+  font-size:12.5px;color:#6b5a3e;letter-spacing:1.4px;text-transform:uppercase;
+  margin:24px 0 8px;font-weight:600;
+}
+.ato-publicado p{
+  color:var(--p-tinta);font-size:16px;line-height:1.85;
+  margin:0 0 15px;max-width:100%;text-align:justify;
+}
+.ato-publicado hr{
+  border:0;border-top:1px solid var(--p-linha);margin:28px 0;
+}
+.ato-publicado strong{color:#2a2116}
+
+/* fecho do ato — fé pública */
+.ato-selo{
+  margin:40px 0 0;padding-top:18px;max-width:100%;
+  border-top:1px solid var(--p-linha);
+  font-size:12.5px;line-height:1.85;color:#6b5a3e;
+}
+.ato-selo code{
+  font-family:monospace;font-size:12px;word-break:break-all;color:var(--p-ouro);
+}
+
+@media (max-width:700px){
+  .ato-publicado{padding:26px 20px 32px}
+  .ato-publicado h1{font-size:20px}
+  .ato-publicado p{font-size:15px;line-height:1.8}
+}
+
+@media (max-width:700px){
+  .ato-item{grid-template-columns:1fr;gap:8px}
+  .ato-desig{justify-self:start;padding:4px 10px}
+  .ato-data{justify-self:start}
+}
+
+/* === ajustes de tela estreita === */
+@media (max-width:900px){
+  .grade-3,.grade-4{grid-template-columns:1fr 1fr}
+  .comparativo{grid-template-columns:1fr}
+  .pergunta-legitima{grid-template-columns:1fr;gap:26px;padding:28px 22px}
+}
+@media (max-width:640px){
+  .grade-2,.grade-3,.grade-4{grid-template-columns:1fr}
+  .pag-topo h1{font-size:27px}
+  .pag-topo{padding:38px 0 34px}
+  .tempo{padding-left:30px}
+  .tempo::before{left:9px}
+  .marco::before{left:-27px}
+  .qa summary{font-size:15px;padding:17px 48px 17px 18px}
+}
+
+/* === seção O Fundador (retrato do marinheiro) === */
+.fundador{
+  display:grid;grid-template-columns:360px 1fr;gap:40px;
+  padding:28px;margin:38px auto;align-items:center;
+}
+.fd-foto img{
+  width:100%;height:auto;border-radius:12px;display:block;
+  border:1px solid var(--borda);
+  box-shadow:0 18px 44px rgba(0,0,0,.4);
+}
+.fundador h2{
+  font-size:27px;font-weight:800;line-height:1.28;
+  margin:12px 0 16px;color:var(--texto);
+}
+.fundador p{
+  line-height:1.85;color:#c3d0e8;font-size:15px;margin:0 0 24px;
+}
+@media (max-width:720px){
+  .fundador{grid-template-columns:1fr;gap:24px}
+}
+
+/* === arte dos símbolos nacionais === */
+.simbolo-arte{
+  display:block;margin:24px auto;max-width:300px;height:auto;
+  border-radius:12px;border:1px solid rgba(214,178,60,.3);
+  box-shadow:0 14px 34px rgba(0,0,0,.4);
+  background:#f5f0eb;padding:18px;
+}
+.simbolo-arte.wide{max-width:500px}
+.hino-player{display:block;margin:24px auto;max-width:420px;width:100%}

@@ -1,0 +1,70 @@
+{
+  "manifesto": {
+    "badge": "Soberania e Excelência Digital",
+    "titulo_linha1": "A ORDEM REINA",
+    "titulo_linha2": "COM RIGOR E JUSTIÇA",
+    "subtitulo": "Portal oficial do Reino Martyniano. Governança soberana, tecnologia de ponta e fidelidade aos princípios supremos do Estado.",
+    "pilares": [
+      {"icone": "coroa", "titulo": "Sabedoria, Força e Fé", "texto": "Princípios supremos do Estado, sobre os quais se funda toda a ordem do Reino. Constituição, Art. 2º."},
+      {"icone": "escudo", "titulo": "Unidade do Poder de Estado", "texto": "A Coroa de Estado é a fonte única, indivisível e perpétua de todo o poder e autoridade. Constituição, Art. 3º."},
+      {"icone": "espada", "titulo": "Primazia do Dever", "texto": "O cumprimento estrito dos deveres precede o gozo de direitos. Constituição, Art. 2º, § 1º."},
+      {"icone": "balanca", "titulo": "Ordem e Progresso", "texto": "Estruturam a disciplina institucional do Reino, rejeitando o fanatismo e a desordem. Constituição, Art. 2º, § 2º."}
+    ]
+  },
+  "decretos": [
+    {
+      "id": "Reforma Constitucional de 2026",
+      "titulo": "Consolidação do Reino Martyniano",
+      "texto": "Adoção exclusiva da denominação Reino Martyniano e reorganização do Estado sob a Unidade do Poder da Coroa."
+    }
+  ],
+  "ministerios": [],
+  "poderes": [
+    "Coroa de Estado",
+    "Governo Nacional",
+    "Supremo Tribunal do Reino Martyniano",
+    "Casa Real de Martynia",
+    "Unidades Administrativas Martynianas"
+  ],
+  "instituicoes": [
+    {"nome": "Sociedade dos Microestados Paraestatais", "descricao": "A organização internacional dos microestados paraestatais, da qual o Reino Martyniano é Estado-membro."},
+    {"nome": "Ordem Ortodoxa Javenista Martyniana", "descricao": "A ordem religiosa oficial do Reino, guardiã da fé javenista, da qual Sua Majestade é Regente-Primaz."},
+    {"nome": "Soberano Cartório Nacional", "descricao": "O cartório oficial do Estado, responsável pelos registros públicos e atos notariais."},
+    {"nome": "Serviço Secreto do Reino Martyniano (SSRM)", "descricao": "A inteligência do Estado. Nasceu da antiga Rede Estrutural de Inteligência e opera em defesa da soberania, com espionagem, infiltração e ações cibernéticas. É a memória e o escudo silencioso do Reino."},
+    {"nome": "Guarda Nacional", "descricao": "As forças de defesa do Reino Martyniano, herdeiras do antigo Exército, responsáveis pela proteção territorial e pela integridade do Estado."},
+    {"nome": "Gendarmeria Martyniana", "descricao": "A força de segurança e ordem pública, sucessora da Brigada Militar Ibinaurense, responsável pela manutenção da ordem e pela proteção dos cidadãos e das instituições."},
+    {"nome": "Laboratórios Alves Biotech", "descricao": "O centro de pesquisa científica do Estado, sucessor do Reichslab, que conduz a Ciência Javenista: o estudo do nanaite, a produção de cristais sintéticos e as pesquisas que resultaram no X-2015 e no HMEB-X2015."},
+    {"nome": "GDev", "descricao": "A empresa nacional de manufatura e construção de equipamentos sob demanda, sucessora da Goronodev. Materializa em engenharia o que os laboratórios descobrem."},
+    {"nome": "Rede Estrutural de Educação, Ciência e Tecnologia", "descricao": "A rede educacional e tecnológica do Estado, sucessora da Rede de Educação Drasdna, que forma os cidadãos e difunde o conhecimento que sustenta o desenvolvimento do Reino."},
+    {"nome": "Supremo Conselho Javenista", "descricao": "O conselho espiritual e judicial supremo do Reino, que julgou o traidor por alta traição em 2025 e é o guardião do Código Javenista Martyniano."}
+  ],
+  "categorias_leis": [
+    "Constituição",
+    "Atos Constitucionais",
+    "Atos Legislativos",
+    "Decretos Reais",
+    "Diretivas Reais",
+    "Resoluções"
+  ],
+  "categorias_regulacao": [
+    "Estatuto da Monarquia"
+  ],
+  "atos_pessoal": [
+    "Nomeações",
+    "Exonerações",
+    "Aposentadoria",
+    "Contratação de Servidor"
+  ],
+  "atos_diversos": [
+    "Editais",
+    "Contratações",
+    "Balanços",
+    "Comunicados e Pronunciamentos"
+  ],
+  "noticias": [
+    {"titulo": "Reino inaugura o Estado Digital", "texto": "O Reino Martyniano lança seu portal oficial de serviços digitais, com identidade, leis e diário oficial acessíveis a todos.", "data": "30/08/2026"},
+    {"titulo": "Cidadania digital já disponível", "texto": "Cidadãos podem se registrar e receber seus documentos oficiais com identificação única e validável.", "data": "29/08/2026"},
+    {"titulo": "Novos atos normativos publicados", "texto": "Acesse as atualizações legislativas no Diário Oficial do Reino.", "data": "28/08/2026"}
+  ],
+  "leis": {}
+}

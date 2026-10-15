@@ -1,0 +1,45 @@
+[
+  {
+    "designador": "CF.2026",
+    "titulo": "CONSTITUIÇÃO DO REINO MARTYNIANO",
+    "ementa": "Texto Único Reconciliado da Reforma Institucional de 2026",
+    "data": "06/09/2026",
+    "sha256": "272cfc3031a78b9d0dccbf4748708d77d6835ee984f6c333dde7f9d064e050d8",
+    "pagina": "CF.2026.html",
+    "fonte": "/home/usuario/Desktop/Reino Martyniano/Reino de Martina - Novo Reinando/Documentos Layout/CONSTITUICAO_REINO_MARTYNIANO_2026_FINAL.pdf",
+    "preparado_em": "2026-09-22T16:48:44",
+    "publicado": true,
+    "categoria": "Constituição",
+    "nome": "Constituição Do Reino Martyniano",
+    "ano": "2026",
+    "publicado_em": "2026-09-22T16:50:00"
+  },
+  {
+    "designador": "AL.01.2026",
+    "titulo": "ATO LEGISLATIVO Nº 01/2026",
+    "ementa": "Dispõe sobre a Organização do Estado Martyniano, fixa a identidade nacional, a estrutura dos Poderes e da Administração Pública, e dá outras providências.",
+    "data": "22/09/2026",
+    "sha256": "a52c44e232cd51cd6b36b8374c6e4a68848dcb978c02d0fd41d3a73b3070de53",
+    "pagina": "AL.01.2026.html",
+    "fonte": "~/Documentos/Reino_Martyniano/MINUTA_Ato_Legislativo_01_2026_Organizacao_do_Estado.md",
+    "preparado_em": "2026-09-29T18:45:23",
+    "publicado": true,
+    "categoria": "Ato Legislativo",
+    "nome": "Ato Legislativo Nº 01/2026 — Organização do Estado",
+    "ano": "2026",
+    "publicado_em": "2026-09-29T18:45:23",
+    "estado": "sancionado"
+  },
+  {
+    "designador": "AL.02.2026",
+    "titulo": "Ato Legislativo nº 02/2026",
+    "epigrafe": "Dispõe sobre a recepção da legislação anterior à Reforma Institucional de 2026 relativa aos Símbolos Nacionais, atualiza a nomenclatura dos instrumentos heráldicos e dá outras providências.",
+    "template": "atos/AL.02.2026.html",
+    "data": "2026-09-29",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Ato Legislativo",
+    "estado": "sancionado",
+    "publicado_em": "2026-10-05T18:20:37"
+  }
+]

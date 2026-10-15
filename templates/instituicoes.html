@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituições — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/ministerios">Ministérios</a><a href="/diario-oficial">Diário</a><a href="/noticias">Notícias</a></nav>
+</header>
+<main class="form-page">
+  <div class="card wide">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Instituições</span></div>
+    <h2>Instituições do Estado</h2>
+    <p class="sub-text">Poderes, conselhos e órgãos do Reino Martyniano.</p>
+
+    <h3 class="sec">Poderes e Conselhos</h3>
+    <div class="grid-2">
+      {% for p in est.poderes %}<div class="item-lei">{{ p }}</div>{% endfor %}
+    </div>
+
+    <h3 class="sec">Instituições</h3>
+    <div class="grid-2">
+      {% for i in est.instituicoes %}
+      <div class="item-lei"><strong>{{ i.nome }}</strong><br><span style="font-weight:400;color:var(--texto-sec)">{{ i.descricao }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Instituições</footer>
+</body>
+</html>

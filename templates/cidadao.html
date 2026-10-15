@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel — {{ c.nome }} | Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/validar">Validar</a><a href="/logout">Sair</a></nav>
+</header>
+<main class="form-page">
+  <div class="card wide">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Painel do cidadão</span></div>
+    <div class="cidadao">
+      <div class="avatar">{{ c.nome[:1] }}</div>
+      <div>
+        <h2>{{ c.nome }}</h2>
+        <p class="cid">ID Digital: <b>{{ c.id }}</b></p>
+        <p class="cid">Registro: {{ c.data }}</p>
+      </div>
+    </div>
+
+    <h3 class="sec">Documentos digitais</h3>
+    <form method="POST" action="/cidadao/{{c.id}}/documento">
+      <select name="tipo">
+        <option>Certidão de Cidadania</option>
+        <option>Passaporte Digital</option>
+        <option>Carteira de Cidadão</option>
+        <option>Certidão de Residência Digital</option>
+      </select>
+      <button type="submit">Emitir documento</button>
+    </form>
+
+    {% if docs %}
+    <table>
+      <tr><th>ID</th><th>Documento</th><th>Emitido</th></tr>
+      {% for d in docs %}
+      <tr><td>{{ d.id }}</td><td>{{ d.tipo }}</td><td>{{ d.data }}</td></tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p class="vazio">Nenhum documento emitido ainda.</p>
+    {% endif %}
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Painel do cidadão</footer>
+</body>
+</html>

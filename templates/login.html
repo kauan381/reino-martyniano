@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/registro">Cidadania</a><a href="/validar">Validar</a></nav>
+</header>
+<main class="form-page">
+  <div class="card">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Login</span></div>
+    <h2>Acesso do cidadão</h2>
+    {% with m = get_flashed_messages() %}{% if m %}<div class="erro">{{ m[0] }}</div>{% endif %}{% endwith %}
+    <form method="POST">
+      <label>Seu ID de cidadão <input type="text" name="id" placeholder="RM-XXXXXXXX" required></label>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Acesso</footer>
+</body>
+</html>

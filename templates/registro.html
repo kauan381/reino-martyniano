@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Cidadania — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/login">Entrar</a><a href="/validar">Validar</a></nav>
+</header>
+<main class="form-page">
+  <div class="card">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Registro</span></div>
+    <h2>Registro de Cidadania</h2>
+    {% with m = get_flashed_messages() %}{% if m %}<div class="erro">{{ m[0] }}</div>{% endif %}{% endwith %}
+    <form method="POST">
+      <label>Nome completo <input type="text" name="nome" required></label>
+      <label>Documento pessoal (CPF/RG) <input type="text" name="doc" required></label>
+      <button type="submit">Registrar cidadania</button>
+    </form>
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Registro</footer>
+</body>
+</html>

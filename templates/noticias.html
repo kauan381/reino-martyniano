@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notícias — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/diario-oficial">Diário</a><a href="/ministerios">Ministérios</a><a href="/instituicoes">Instituições</a></nav>
+</header>
+<main class="form-page">
+  <div class="card wide">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Notícias</span></div>
+    <h2>Notícias do Reino</h2>
+    <p class="sub-text">Comunicados e pronunciamentos oficiais.</p>
+    {% if est.noticias %}
+      {% for n in est.noticias %}
+      <div class="noticia"><span class="data">{{ n.data }}</span><h3>{{ n.titulo }}</h3><p>{{ n.texto }}</p></div>
+      {% endfor %}
+    {% else %}
+      <p class="vazio">Nenhuma notícia publicada ainda. As notícias oficiais aparecerão aqui.</p>
+    {% endif %}
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Notícias</footer>
+</body>
+</html>

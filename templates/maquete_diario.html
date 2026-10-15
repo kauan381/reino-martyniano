@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquete — Cabeça e Fecho do Ato · Diário Oficial</title>
+<style>
+  :root{
+    --fundo:#070d1c;
+    --texto:#f0f4fb;
+    --sub:#b4c2db;
+    --ouro:#d6b23c;
+    --ouro-claro:#f0d17a;
+    --borda:rgba(214,178,60,.25);
+    --borda-tenue:rgba(255,255,255,.10);
+    --superficie:rgba(16,28,52,.72);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;padding:34px 20px 70px;background:var(--fundo);color:var(--texto);
+    font-family:'Poppins',system-ui,sans-serif;
+  }
+  .aviso{
+    max-width:820px;margin:0 auto 30px;padding:14px 18px;border-radius:10px;
+    background:rgba(214,178,60,.08);border:1px solid var(--borda);
+    font-size:12.5px;color:var(--ouro-claro);letter-spacing:.3px;line-height:1.6;
+  }
+  .folha{
+    max-width:820px;margin:0 auto;background:var(--superficie);
+    border:1px solid var(--borda-tenue);border-radius:12px;padding:44px 52px 0;
+  }
+
+  /* ─────────── CABEÇA DO ATO ─────────── */
+  .cabeca{text-align:center;padding-bottom:26px;border-bottom:2px solid var(--borda)}
+  .cabeca .grande-selo{width:104px;height:104px;object-fit:contain;margin:0 auto 16px;display:block}
+  .cabeca .orgao{
+    font-size:11px;font-weight:800;letter-spacing:4.2px;text-transform:uppercase;
+    color:var(--ouro);margin:0 0 4px;
+  }
+  .cabeca .coroa{
+    font-size:10px;letter-spacing:2.6px;text-transform:uppercase;
+    color:var(--sub);margin:0 0 18px;
+  }
+  .cabeca .titulo-ato{
+    font-family:'Playfair',serif;font-size:23px;font-weight:700;
+    color:var(--texto);margin:0 0 8px;line-height:1.3;
+  }
+  .cabeca .epigrafe{
+    font-style:italic;font-size:13.5px;color:var(--sub);margin:0 0 14px;line-height:1.6;
+  }
+  .cabeca .meta{
+    font-size:11.5px;color:var(--sub);letter-spacing:.4px;
+    display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  }
+  .cabeca .meta b{color:var(--ouro-claro);font-weight:700}
+
+  .corpo{padding:26px 0 10px}
+  .corpo p{font-size:15px;line-height:1.9;color:#cfdaee;margin:0 0 14px}
+  .corpo .preambulo{color:var(--texto)}
+
+  /* ─────────── FECHO ─────────── */
+  .fecho{padding:8px 0 24px}
+  .fecho .ordem{font-size:15px;color:var(--texto);margin:0 0 22px;letter-spacing:.3px}
+  .fecho .assinatura-nome{font-size:15px;color:var(--texto);margin:0 0 2px;letter-spacing:.5px}
+  .fecho .assinatura-cargo{font-size:12px;color:var(--sub);margin:0 0 20px}
+  .fecho .local-data{font-size:13.5px;color:var(--sub);margin:0 0 6px;line-height:1.7}
+
+  /* ─────────── RODAPÉ DE AUTENTICAÇÃO (três blocos) ─────────── */
+  .autenticacao{
+    border-top:2px solid var(--borda);margin-top:8px;padding:20px 0 26px;
+    display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center;
+  }
+  .autenticacao .bloco{font-size:10.5px;line-height:1.65;color:var(--sub)}
+  .autenticacao .bloco.dir{text-align:right}
+  .autenticacao .rotulo{
+    display:block;font-size:9.5px;font-weight:800;letter-spacing:1.8px;
+    text-transform:uppercase;color:var(--ouro);margin-bottom:5px;
+  }
+  .autenticacao code{font-family:monospace;font-size:10px;color:var(--ouro-claro);word-break:break-all}
+  .autenticacao .centro{text-align:center}
+  .pagina-circulo{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:50%;border:1.5px solid var(--borda);
+    font-family:'Playfair',serif;font-size:16px;font-weight:700;color:var(--ouro-claro);
+  }
+  .pagina-legenda{font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--sub);margin-top:7px}
+  .chave-bloco{
+    display:flex;flex-direction:column;gap:3px;align-items:flex-end;
+  }
+  .chave-linha{display:flex;align-items:center;gap:7px;justify-content:flex-end}
+  .cadeado{
+    width:15px;height:15px;border:1.4px solid var(--ouro);border-radius:3px;position:relative;
+    flex-shrink:0;
+  }
+  .cadeado::before{
+    content:"";position:absolute;left:2.6px;top:-6px;width:7px;height:6px;
+    border:1.4px solid var(--ouro);border-bottom:0;border-radius:4px 4px 0 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="aviso">
+  <b>MAQUETE — NADA FOI ALTERADO NO DIÁRIO.</b> Esta é uma proposta para julgamento de Vossa Majestade.
+  A página real segue intacta. Ao pé, as três mudanças que a proposta traria.
+</div>
+
+<div class="folha">
+
+  <!-- ══════ CABEÇA DO ATO ══════ -->
+  <div class="cabeca">
+    <img class="grande-selo" src="/static/brasao_transparente.png" alt="Grande Selo do Estado Martyniano">
+    <p class="orgao">Reino Martyniano</p>
+    <p class="coroa">Coroa de Estado Martyniana · Soberano Cartório Nacional</p>
+    <h1 class="titulo-ato">CONSTITUIÇÃO DO REINO MARTYNIANO</h1>
+    <p class="epigrafe">Texto Único Reconciliado da Reforma Institucional de 2026</p>
+    <p class="meta">
+      <span>Designador <b>CF.2026</b></span>
+      <span>Registro <b>SCNM-2026-00008</b></span>
+      <span>Publicado em <b>06/09/2026</b></span>
+    </p>
+  </div>
+
+  <!-- ══════ CORPO ══════ -->
+  <div class="corpo">
+    <p class="preambulo">Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé
+    Todo-Poderoso e pela vontade inquebrantável da Coroa Martyniana, no exercício do poder
+    constituinte originário, perpétuo e indivisível que nos pertence por direito divino e
+    histórico, PROMULGAMOS a presente Constituição do Reino Martyniano:</p>
+    <p>Artigo 1º O Estado soberano, independente e perpétuo adota exclusiva e oficialmente a
+    denominação de Reino Martyniano, com continuidade histórica ininterrupta desde a fundação
+    original em 14 de agosto de 2015.</p>
+    <p>O corpo do ato segue como está hoje, em coluna única e tipo serifado.</p>
+  </div>
+
+  <!-- ══════ FECHO ══════ -->
+  <div class="fecho">
+    <p class="ordem">Registre-se, Publique-se e Cumpra-se.</p>
+    <p class="assinatura-nome">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-cargo">Kauan Martynius Rex I · Chefe de Estado</p>
+    <p class="local-data">
+      Distrito Real de Kauan-Grado, Comuna de Kauan-Grado, 6 de setembro de 2026.<br>
+      11º ano do Reinado Martyniano · 1º da Reforma Institucional
+    </p>
+  </div>
+
+  <!-- ══════ RODAPÉ DE AUTENTICAÇÃO ══════ -->
+  <div class="autenticacao">
+    <div class="bloco">
+      <span class="rotulo">Verificação</span>
+      Confira a autenticidade em<br>
+      <code>reino-martyniano/diario-oficial/CF.2026</code><br>
+      Integridade SHA-256<br>
+      <code>272cfc3031a78b9d…</code>
+    </div>
+    <div class="bloco centro">
+      <span class="pagina-circulo">I</span>
+      <div class="pagina-legenda">Folha</div>
+    </div>
+    <div class="bloco dir">
+      <span class="rotulo">Assinatura Digital</span>
+      <div class="chave-bloco">
+        <div class="chave-linha"><span>Chave Real 2026</span><span class="cadeado"></span></div>
+        <div>Documento assinado digitalmente por Sua Majestade</div>
+        <div>Fingerprint</div>
+        <code>736F32B5FABB0381…</code>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

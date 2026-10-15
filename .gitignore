@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Dados internos/backend (nao vao para o repositorio publico)
+data/cidadaos.json
+data/documentos.json
+data/atos_aguardando_assinatura.json
+data/atos.json.bak_retirada
+
+# Arquivos de rascunho e lixo soltos na raiz
+/Conheca
+/Diario
+/CF_*.png
+/conferencia_*.png
+/FINAL_*.png
+/novo_topo_*.png
+/PADRAO_*.png
+/topo_*.png
+/validacao_*.png

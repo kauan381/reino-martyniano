@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validar Documento — Reino Martyniano</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<body>
+<header class="topbar">
+  <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
+  <nav><a href="/">Início</a><a href="/registro">Cidadania</a><a href="/login">Login</a></nav>
+</header>
+<main class="form-page">
+  <div class="card">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Validar documento</span></div>
+    <h2>Validar documento digital</h2>
+    <p class="sub-text">Confira a autenticidade de um documento emitido pelo Estado Digital.</p>
+    <form method="POST">
+      <label>ID do documento <input type="text" name="doc" placeholder="DOC-XXXXXXXXXX" required></label>
+      <button type="submit">Validar</button>
+    </form>
+    {% if resultado %}
+      {% if resultado.valido %}
+      <div class="valido">
+        <div class="check"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 6.5"/></svg></div>
+        <h3>Documento VÁLIDO</h3>
+        <p><b>ID:</b> {{ resultado.doc.id }}</p>
+        <p><b>Tipo:</b> {{ resultado.doc.tipo }}</p>
+        <p><b>Cidadão:</b> {{ resultado.nome }}</p>
+        <p><b>Emitido:</b> {{ resultado.doc.data }}</p>
+        <p class="hash">Hash: {{ resultado.doc.hash }}</p>
+      </div>
+      {% else %}
+      <div class="invalido">
+        <div class="check"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+        <h3>Documento NÃO encontrado</h3>
+        <p>O ID <b>{{ resultado.doc }}</b> não consta no registro do Estado Digital.</p>
+      </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</main>
+<footer>Reino Martyniano · Estado Digital · Validação</footer>
+</body>
+</html>

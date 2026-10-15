@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Cabeça e folha do ato — forma do Diário Oficial</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — fixado em 30/09/2026 */
+    --papel:#f5f0eb;
+    --papel-linha:#e6ddc9;
+    --ouro-traco:#9a7d21;
+    --ouro:#b08d42;
+    --tinta:#1c1a18;
+    --azul-noite:#10213a;
+    --ouro-escuro:#8a6a1e;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+    --site-sub:#b4c2db;
+    --site-ouro:#d6b23c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    padding-bottom:30px;
+    margin-bottom:34px;
+    border-bottom:2px solid var(--ouro-traco);
+  }
+  .cabeca-ato .selo-ato,
+  .cabeca-ato .brasao-ato{
+    width:112px; height:112px;
+    object-fit:contain;
+    display:block; margin:0 auto 20px;
+  }
+  .cabeca-ato .orgao{
+    font-size:11px; font-weight:800; letter-spacing:4.4px;
+    text-transform:uppercase; color:var(--ouro-traco);
+    margin:0 0 6px;
+  }
+  .cabeca-ato .coroa-linha{
+    font-size:10px; letter-spacing:2.8px; text-transform:uppercase;
+    color:#8a7a5c; margin:0 0 26px;
+  }
+  .cabeca-ato .titulo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:27px; font-weight:700; line-height:1.3;
+    color:var(--tinta); margin:0 0 12px;
+  }
+  .cabeca-ato .epigrafe{
+    font-style:italic; font-size:14.5px; line-height:1.65;
+    color:#6b5a3e; margin:0 auto; max-width:640px;
+  }
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  /* ── TIPOGRAFIA DA LEI — escala hierárquica ──────────────
+     Corpo 16,5 · Capítulo 13,5 · Título 22 · Parte 26
+     O respiro separa os blocos mais que o tamanho.         */
+  .corpo-ato p{
+    font-size:16.5px; line-height:1.9;
+    margin:0 0 18px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* preâmbulo — o "Nós, ..." */
+  .corpo-ato p.preambulo{
+    text-align:justify;
+    margin-bottom:30px;
+  }
+  /* incisos — recuados e com respiro menor */
+  .corpo-ato p.inciso{
+    padding-left:34px;
+    margin:0 0 9px;
+    text-align:left;
+  }
+  /* fecho, assinatura, local — a parte final */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:40px 0 44px;
+    letter-spacing:.4px;
+  }
+  .corpo-ato p.assinatura{
+    text-align:center;
+    font-weight:700;
+    margin:0 0 6px;
+  }
+  .corpo-ato p.local{
+    text-align:center;
+    font-size:15px;
+    color:#6b5a3e;
+    margin:0 0 18px;
+  }
+  .corpo-ato p.assinatura-digital{
+    text-align:center;
+    font-size:14px;
+    font-style:italic;
+    color:#6b5a3e;
+    margin:22px 0 0;
+  }
+  /* ── ANEXO — as pranchas dos símbolos ─────────────────────── */
+  .corpo-ato .anexo{
+    margin-top:64px;
+    padding-top:34px;
+    border-top:2px solid var(--ouro-traco);
+  }
+  .corpo-ato .anexo-titulo{
+    font-family:'Playfair Display',serif;
+    font-size:20px; font-weight:700; color:var(--ouro-traco);
+    text-align:center; letter-spacing:2.4px;
+    margin:0 0 8px;
+  }
+  .corpo-ato .anexo-linha{
+    text-align:center; font-size:14px; color:#6b5a3e;
+    margin:0 0 38px;
+  }
+  .corpo-ato .anexo-peca{
+    margin:0 0 44px;
+    text-align:center;
+    page-break-inside:avoid;
+  }
+  .corpo-ato .anexo-peca img{
+    max-width:100%;
+    max-height:420px;
+    object-fit:contain;
+    margin:0 auto 16px;
+    display:block;
+  }
+  .corpo-ato .anexo-peca figcaption{
+    font-size:13.5px;
+    line-height:1.7;
+    color:#5a4a35;
+    text-align:left;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .corpo-ato .anexo-nota{
+    font-size:13.5px;
+    line-height:1.75;
+    color:#5a4a35;
+    border-left:2px solid var(--papel-linha);
+    padding-left:16px;
+    margin:0 0 18px;
+    text-align:left;
+  }
+  /* T1 — PARTE / LIVRO */
+  .corpo-ato h1{
+    font-family:'Playfair Display',serif;
+    font-size:26px; font-weight:700; color:#2a2116;
+    text-align:center; letter-spacing:.5px;
+    margin:52px 0 10px;
+  }
+  /* T2 — TÍTULO */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:22px; font-weight:700; color:var(--ouro-traco);
+    margin:46px 0 20px;
+    text-align:center;
+    letter-spacing:.3px;
+    line-height:1.3;
+  }
+  /* T3 — CAPÍTULO / SEÇÃO */
+  .corpo-ato h3{
+    font-size:13.5px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:#7a6845;
+    margin:34px 0 14px;
+    text-align:center;
+    line-height:1.45;
+  }
+  /* parágrafo de artigo — o § e o inciso */
+  .corpo-ato p > strong:first-child{
+    color:#2a2116;
+  }
+  /* citação / epígrafe dentro do corpo */
+  .corpo-ato blockquote{
+    margin:20px 0 20px 34px;
+    padding-left:16px;
+    border-left:2px solid var(--papel-linha);
+    font-style:italic; font-size:15.5px; color:#6b5a3e;
+  }
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--papel-linha);
+    margin:34px 0;
+  }
+  .corpo-ato strong{color:#2a2116}
+
+  /* ── FECHO / FÉ PÚBLICA ─────────────────────────────────── */
+  .fecho-ato{
+    margin-top:52px; padding-top:24px;
+    border-top:2px solid var(--ouro-traco);
+    text-align:center;
+  }
+  .fecho-ato .selo-fecho{
+    width:76px; height:76px; object-fit:contain;
+    display:block; margin:0 auto 16px;
+  }
+  .fecho-ato p{
+    font-size:12.5px; line-height:1.9; color:#6b5a3e;
+  }
+  .fecho-ato code{
+    font-family:monospace; font-size:12px;
+    color:var(--ouro-traco); word-break:break-all;
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .titulo-ato{font-size:20px}
+    .corpo-ato p{font-size:15px; line-height:1.8}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="/static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="orgao">Coroa de Estado Martyniana</p>
+    <p class="coroa-linha">Soberano Cartório Nacional do Reino Martyniano</p>
+    <h1 class="titulo-ato">{{TITULO}}</h1>
+    <p class="epigrafe">{{EMENTA}}</p>
+  </header>
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+{{CORPO|safe}}
+  </div>
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="selo-fecho" src="/static/selo_estado.png" alt="Selo de Fé Pública">
+    <p>
+      Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública<br>
+      Documento oficial do Reino Martyniano<br>
+      Designador {{DESIGNADOR}} · Integridade SHA-256 <code>{{HASH}}</code>
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
