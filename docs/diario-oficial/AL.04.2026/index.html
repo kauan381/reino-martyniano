@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ato Legislativo nº 04/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Ato Legislativo</h1>
+    <p class="numero-ato">Nº 04/2026</p>
+    <p class="ementa">Dispõe sobre as Cortes Martynianas, o Senado Real, a Câmara dos Comuns e o Tribunato dos Povos, e fixa o regime de deliberação, de instalação e de publicidade das Cortes.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé Todo-Poderoso e pela vontade inquebrantável da Coroa Martyniana, no uso das atribuições que nos são conferidas pela Constituição, considerando:</p>
+<p>(a) que a Constituição, no Artigo 3°, consagra a Unidade do Poder de Estado, pela qual as funções de legislar, administrar e julgar competem à própria Coroa, sempre sujeitas à avocação, ao veto e à anulação reais;</p>
+<p>(b) que o Artigo 9° da Constituição erige em cláusulas pétreas a forma monárquica de governo, a perpetuidade da Coroa Martyniana e a indivisibilidade do Reino, fundamento último da Confiança Mútua entre o Trono e as Cortes;</p>
+<p>(c) que o Ato Legislativo n° 01/2026, nos Artigos 29, 30, 31, 47 a 50 e 62, instituiu as Cortes Martynianas, o Tribunato dos Povos e a organização territorial do Reino, remetendo a ato próprio a estrutura e o funcionamento das Cortes;</p>
+<p>(d) que o Ato Legislativo n° 03/2026 fixou a escada nobiliárquica do Reino, base da Bancada do Oficialato no Senado Real.</p>
+<p class="proclamacao">P R O M U L G A M O S :</p>
+<h2>TÍTULO I — DA NATUREZA E DO LIMITE DAS CORTES</h2>
+<p><strong>Artigo 1°</strong> As Cortes Martynianas são o órgão de deliberação pública do Reino, de composição bicameral, integrado pelo Senado Real, câmara alta, e pela Câmara dos Comuns, câmara baixa, com sede no Distrito Real de Kauan-Grado.</p>
+<p><strong>Artigo 2°</strong> As Cortes deliberam, não decidem: as suas deliberações não vinculam o Trono e ficam sempre sujeitas à sanção, ao veto e à avocação reais, na forma do Artigo 30, parágrafo único, do Ato Legislativo n° 01/2026.</p>
+<h2>TÍTULO II — DO SENADO REAL</h2>
+<h3>CAPÍTULO I — DA COMPOSIÇÃO</h3>
+<p><strong>Artigo 3°</strong> O Senado Real compõe-se de três bancadas de ofício:</p>
+<p class="inciso">I, a Bancada do Oficialato, integrada pelos titulares da nobreza do Reino, por grau, na forma do Ato Legislativo n° 03/2026;</p>
+<p class="inciso">II, a Bancada do Conselho da Coroa de Estado, integrada pelos conselheiros, que sentam ex officio;</p>
+<p class="inciso">III, a Bancada do Governo, integrada pelo Primeiro-Ministro e pelos Ministros de Estado, por força do cargo.</p>
+<p><strong>Artigo 4°</strong> O assento no Senado Real pertence ao ofício, nunca à pessoa, e vota-se por cabeça, ainda que o titular acumule títulos.</p>
+<p class="paragrafo">§ 1° O ofício sem titular tem assento em expectativa, que não vota enquanto não for provido.</p>
+<p class="paragrafo">§ 2° Título estrangeiro não confere assento no Senado Real.</p>
+<p><strong>Artigo 5°</strong> A Bancada do Oficialato compreende os cinco graus da Nobreza do Reino, na ordem do Artigo 4° do Ato Legislativo n° 03/2026, e, no degrau do Barão, o Lorde e a Amazona.</p>
+<p><strong>Artigo 6°</strong> Fica refundado o Conselho da Coroa de Estado com assento no Senado Real, para que não se extinga por decurso de prazo, observado o disposto no Artigo 20 do Ato Legislativo n° 01/2026.</p>
+<h3>CAPÍTULO II — DA PRESIDÊNCIA E DO FUNCIONAMENTO</h3>
+<p><strong>Artigo 7°</strong> O Rei é o Presidente de direito do Senado Real e preside a casa quando comparece.</p>
+<p class="paragrafo">§ 1° Um Presidente em exercício conduz a casa no dia a dia, designado na forma da lei.</p>
+<p class="paragrafo">§ 2° O voto de desempate compete exclusivamente ao Rei; o Presidente em exercício nunca desempata.</p>
+<p><strong>Artigo 8°</strong> A sanção real é ato separado da presidência do Senado, e as duas funções não se confundem.</p>
+<p><strong>Artigo 9°</strong> A ata de cada sessão é lavrada e assinada pelo secretário da casa.</p>
+<p><strong>Artigo 10°</strong> A Sessão da Coroa, em que o Rei preside em pessoa, fica reservada às ocasiões solenes.</p>
+<p><strong>Artigo 11°</strong> O quórum do Senado Real calcula-se sobre os assentos preenchidos, nunca sobre os assentos nominais.</p>
+<h2>TÍTULO III — DA CÂMARA DOS COMUNS</h2>
+<p><strong>Artigo 12°</strong> A Câmara dos Comuns compõe-se por representação territorial, integrada pelas Províncias e pelas Unidades Administrativas Martynianas.</p>
+<p><strong>Artigo 13°</strong> Os assentos da Câmara dos Comuns são fixos por unidade e proporcionais onde houver população, na forma da lei.</p>
+<p><strong>Artigo 14°</strong> A unidade sem população tem assento em expectativa, que não vota até que atinja o mínimo de cidadãos.</p>
+<p><strong>Artigo 15°</strong> A Câmara dos Comuns instala-se desde a publicação deste Ato, funcionando pelos assentos de máquina, assim entendidos os exercidos por agentes da Burocracia Cibernética, e os cidadãos ingressam na casa à medida que se atingir o mínimo de três cidadãos com assento ativo.</p>
+<p class="paragrafo">Parágrafo único. Enquanto não se atingir o mínimo de três cidadãos, os assentos de cidadão permanecem em expectativa, sem prejuízo da vigência e do funcionamento da casa.</p>
+<p><strong>Artigo 16°</strong> A Câmara dos Comuns elege o seu Presidente, sujeito a confirmação real.</p>
+<h2>TÍTULO IV — DO TRIBUNATO DOS POVOS</h2>
+<p><strong>Artigo 17°</strong> O Tribunato dos Povos é cargo único e sacro, de exercício obrigatório, que não pode permanecer vago enquanto subsistir o Reino, na forma do Artigo 31 do Ato Legislativo n° 01/2026.</p>
+<p><strong>Artigo 18°</strong> Incumbe ao Tribuno dos Povos apresentar parecer contrário, obrigatório e publicado, sobre todo ato normativo, antes da sanção.</p>
+<p><strong>Artigo 19°</strong> O Tribuno dos Povos exerce o poder de intercessão, pelo qual suspende o ato e o devolve ao Trono com parecer fundamentado.</p>
+<p><strong>Artigo 20°</strong> O Tribuno dos Povos não recebe ordem sobre o sentido do seu parecer: pode ser exonerado, nunca instruído quanto ao mérito da contradição.</p>
+<p><strong>Artigo 21°</strong> O Tribuno dos Povos é provido por nomeação do Rei, com aprovação do Senado Real, mediante Voto de Confiança, por mandato fixo.</p>
+<p class="paragrafo">§ 1° A exoneração do Tribuno dos Povos somente se dá por fato grave, publicado no Diário Oficial.</p>
+<p class="paragrafo">§ 2° Não havendo cidadão disponível para o exercício, o Tribunato é exercido por magistratura digital, na forma do Artigo 4° da Constituição.</p>
+<h2>TÍTULO V — DA CONFIANÇA MÚTUA E DO CAMINHO DA LEI</h2>
+<h3>CAPÍTULO I — DA CONFIANÇA MÚTUA</h3>
+<p><strong>Artigo 22°</strong> O Monarca, em nome da Coroa, sempre ouve os comandados, e o voto das Cortes informa a decisão, sem jamais obrigá-la.</p>
+<p><strong>Artigo 23°</strong> O poder das Cortes é derivado: é exercido porque a Coroa o confere, e não há poder rival ao Poder Único da Coroa.</p>
+<p><strong>Artigo 24°</strong> O Monarca, como símbolo do Reino, não é limitado pelas Cortes e é orientado pelo Governo.</p>
+<h3>CAPÍTULO II — DA AVOCAÇÃO REAL</h3>
+<p><strong>Artigo 25°</strong> A avocação real é mecanismo extraordinário da Coroa, pelo qual o Rei retira o projeto do caminho ordinário e o sanciona por autoridade própria.</p>
+<p class="paragrafo">Parágrafo único. O motivo da avocação é publicado no Diário Oficial, ao lado do ato, e exposto na ata da sessão.</p>
+<h3>CAPÍTULO III — DO CAMINHO DA LEI</h3>
+<p><strong>Artigo 26°</strong> A lei tem dois autores e um só caminho: propõe-na o Estado, ou propõe-na a Câmara dos Comuns, e em ambos os casos a medida percorre a Câmara dos Comuns, o Senado Real e a Sanção Real.</p>
+<p class="paragrafo">§ 1° Em cada casa, sobre a medida, lavra-se Voto de Aprovação, pelo qual a medida segue à casa seguinte, ou Voto de Recomendação, pelo qual a medida não segue e volta ao autor com as alterações sugeridas ou com a recomendação de não aplicação.</p>
+<p class="paragrafo">§ 2° O retorno da medida é sempre ao autor: ao Estado, quando o Estado propôs; à Câmara, quando a Câmara propôs.</p>
+<p class="paragrafo">§ 3° Nenhuma medida recusada chega à sanção por atalho: a lei só alcança a sanção depois de revisada e de novo aprovada pelas duas casas.</p>
+<h3>CAPÍTULO IV — DOS CINCO VOTOS</h3>
+<p><strong>Artigo 27°</strong> São cinco os votos das Cortes:</p>
+<p class="inciso">I, o Voto de Aprovação, sobre lei, ato ou medida, pelo qual a medida passa e segue à casa seguinte;</p>
+<p class="inciso">II, o Voto de Recomendação, sobre lei, ato ou medida, pelo qual a medida é recusada e volta ao autor com as alterações ou com a recomendação de não aplicação;</p>
+<p class="inciso">III, o Voto de Confiança, sobre pessoa ou cargo, pelo qual se aprova a nomeação, quando a lei a exigir;</p>
+<p class="inciso">IV, o Voto de Desconfiança, sobre pessoa ou cargo, pelo qual se recomenda à Coroa a não aprovação;</p>
+<p class="inciso">V, o Voto de Desconfiança Declarado, sobre o Governo, pelo qual se recomenda à Coroa a destituição do Governo.</p>
+<p><strong>Artigo 28°</strong> As nomeações de pessoa ou cargo correm no Senado Real, casa dos ofícios, mediante Voto de Confiança ou Voto de Desconfiança.</p>
+<p><strong>Artigo 29°</strong> O Voto de Desconfiança Declarado contra o Governo corre na Câmara dos Comuns, casa do povo.</p>
+<p class="paragrafo">Parágrafo único. O Voto de Desconfiança Declarado delibera-se por maioria absoluta dos assentos ocupados, com presença mínima de dois terços dos assentos ocupados para a sessão deliberar.</p>
+<h3>CAPÍTULO V — DO TETO CIBERNÉTICO E DA PUBLICIDADE</h3>
+<p><strong>Artigo 30°</strong> A bancada exercida por agentes da Burocracia Cibernética instrui, redige e pareceriza, mas nunca alcança a maioria dos assentos preenchidos de cada casa.</p>
+<p><strong>Artigo 31°</strong> Todo voto é lavrado em ata e publicado no Diário Oficial, ao lado do ato a que se refere.</p>
+<p class="paragrafo">Parágrafo único. O voto que recusa e o ato que segue apesar dele são publicados juntos: a divergência é fato público, nunca boato.</p>
+<h2>TÍTULO VI — DAS DISPOSIÇÕES TRANSITÓRIAS E FINAIS</h2>
+<p><strong>Artigo 32°</strong> O Senado Real instala-se com a publicação deste Ato, com os assentos que já tenham titular, compreendidas as bancadas do Conselho da Coroa de Estado e do Governo.</p>
+<p><strong>Artigo 33°</strong> A Câmara dos Comuns funciona desde a publicação deste Ato pelos assentos de máquina, permanecendo em expectativa os assentos de cidadão até que se atinja o mínimo de três cidadãos com assento ativo.</p>
+<p><strong>Artigo 34°</strong> O preenchimento dos assentos seguirá o Direito Eleitoral, nos termos do Ato Legislativo n° 05/2026, quando publicado, na ordem decidida pelo Soberano: primeiro as Cortes, depois a eleição.</p>
+<p><strong>Artigo 35°</strong> Este Ato Legislativo entra em vigor na data de sua publicação, revogadas as disposições em contrário.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+  </div>
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 19 de outubro de 2026, em Kauan-Grado<br>Código de autenticação AL042026RACE3896F9A<br>SHA-256 ace3896f9a1c44bfc969e8bd0e73ea93…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 253.000 48" width="253.000" height="48" role="img" aria-label="Codigo de barras AL042026RACE3896F9A" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="27.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="36.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="57.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="61.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="111.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="115.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="124.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="128.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="138.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="146.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="148.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="160.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="169.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="171.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="179.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="183.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="195.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="202.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="204.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="210.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="214.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="223.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="227.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="235.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="239.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="241.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">AL042026RACE3896F9A</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador AL.04.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

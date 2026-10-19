@@ -6,7 +6,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Poppins','Montserrat',system-ui,sans-serif;color:var(--texto);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
-  background-image:url('bandeira_fundo.jpg'),radial-gradient(1200px 600px at 80% -10%,rgba(61,123,255,0.12),transparent 60%),radial-gradient(1000px 500px at 10% 110%,rgba(214,178,60,0.09),transparent 60%);
+  background-image:url('/static/bandeira_fundo.jpg'),radial-gradient(1200px 600px at 80% -10%,rgba(61,123,255,0.12),transparent 60%),radial-gradient(1000px 500px at 10% 110%,rgba(214,178,60,0.09),transparent 60%);
   background-size:cover;background-position:center;background-attachment:fixed;background-color:#070d1c;font-weight:400}
 h1,h2,h3,.logo{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:.3px}
 

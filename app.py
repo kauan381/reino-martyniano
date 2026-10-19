@@ -1,5 +1,7 @@
-import os, json, uuid, hashlib, datetime
+import os, json, uuid, hashlib, datetime, re
 from flask import Flask, render_template, request, redirect, url_for, session, flash, abort
+
+from codigo_barras import svg_code128, codigo_do_ato
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, 'data')
@@ -114,6 +116,60 @@ def validar():
 def ler_estado():
     return ler(os.path.join(DATA, 'estado.json'), {})
 
+
+# ── MOLDE v2.0: derivação de tipo/número/data do ato ──────────────────────
+MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
+         'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+
+TIPO_ATO_POR_PREFIXO = {
+    'AL': 'ATO LEGISLATIVO',
+    'CF': 'CONSTITUIÇÃO',
+    'DR': 'DECRETO REAL',
+    'RES': 'RESOLUÇÃO',
+}
+
+NOME_REI = 'Kauan Martynius Rex I'
+CARGO_REI = 'Sua Majestade Real, o Rei Martyniano'
+PAIS = 'REINO MARTYNIANO'
+
+
+def _partes_do_designador(designador):
+    m = re.match(r'^([A-Z]+)\.(\d+)(?:\.(\d+))?$', designador or '')
+    if not m:
+        return designador, None, None
+    return m.group(1), m.group(2), m.group(3)
+
+
+def _tipo_numero_do_ato(ato):
+    """Tipo e número do ato, como no PDF: 'ATO LEGISLATIVO' + 'Nº 04/2026'."""
+    designador = ato.get('designador') or ''
+    prefixo, num, ano = _partes_do_designador(designador)
+    tipo = ato.get('tipo') or ato.get('categoria') or TIPO_ATO_POR_PREFIXO.get(prefixo, '')
+    if prefixo in ('AL', 'DR', 'RES') and num and ano:
+        numero = 'Nº %s/%s' % (num, ano)
+    elif prefixo == 'CF' and num:
+        numero = num
+    else:
+        numero = designador
+    return tipo, numero
+
+
+def _data_por_extenso(valor):
+    """'19/10/2026' | '2026-10-19' | ISO → '19 de outubro de 2026'."""
+    if not valor:
+        return ''
+    s = str(valor).strip()
+    m = re.match(r'^(\d{1,2})/(\d{1,2})/(\d{4})$', s)
+    if m:
+        d, mm, a = int(m.group(1)), int(m.group(2)), m.group(3)
+    else:
+        m = re.match(r'^(\d{4})-(\d{2})-(\d{2})', s)
+        if not m:
+            return s
+        a, mm, d = m.group(1), int(m.group(2)), int(m.group(3))
+    mes = MESES[mm - 1] if 1 <= mm <= 12 else str(mm)
+    return '%d de %s de %s' % (d, mes, a)
+
 @app.route('/diario-oficial')
 def diario():
     return render_template('diario.html', est=ler_estado(), atos=atos_publicados())
@@ -163,12 +219,36 @@ def ato_publicado(designador):
         abort(500, description="Template do ato sem os marcadores <!-- CORPO --> / <!-- /CORPO -->.")
     corpo = m.group(1).strip()
 
+    # Integridade: o hash nunca fica vazio. Usa o gravado no ato ou calcula do corpo.
+    sha = (ato.get("sha256") or "").strip()
+    if not sha:
+        sha = hashlib.sha256(corpo.encode("utf-8")).hexdigest()
+
+    codigo = codigo_do_ato(designador, sha)
+    tipo, numero = _tipo_numero_do_ato(ato)
+    data_assinatura = _data_por_extenso(ato.get("data") or ato.get("publicado_em") or "")
+    assinatura_digital = (
+        "Assinado digitalmente em %s, em Kauan-Grado<br>"
+        "Código de autenticação %s<br>"
+        "SHA-256 %s" % (data_assinatura, codigo, sha[:32] + "…")
+    )
+
     return render_template(
         '_folha_ato.html',
         TITULO=ato.get("titulo") or designador,
-        EMENTA=ato.get("ementa") or "",
+        PAIS=PAIS,
+        TIPO_ATO=tipo,
+        NUMERO=numero,
+        EMENTA=ato.get("ementa") or ato.get("epigrafe") or "",
+        APROVACOES=ato.get("aprovacoes") or [],
+        NOME=NOME_REI,
+        CARGO=CARGO_REI,
+        ASSINATURA_DIGITAL=assinatura_digital,
+        CODIGO_BARRAS=svg_code128(codigo),
+        CODIGO=codigo,
+        LINHA_REGISTRO="Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador " + designador,
         DESIGNADOR=designador,
-        HASH=(ato.get("sha256") or "")[:32],
+        HASH=sha,
         CORPO=corpo,
     )
 

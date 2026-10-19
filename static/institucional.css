@@ -326,7 +326,7 @@
 }
 .ato-publicado p{
   color:var(--p-tinta);font-size:16px;line-height:1.85;
-  margin:0 0 15px;max-width:100%;text-align:justify;
+  margin:0 0 15px;max-width:100%;text-align:left;
 }
 .ato-publicado hr{
   border:0;border-top:1px solid var(--p-linha);margin:28px 0;

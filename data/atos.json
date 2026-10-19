@@ -53,5 +53,30 @@
     "tipo": "Ato Legislativo",
     "estado": "sancionado",
     "publicado_em": "2026-10-15T12:37:01"
+  },
+  {
+    "designador": "AL.04.2026",
+    "titulo": "Ato Legislativo nº 04/2026",
+    "ementa": "Dispõe sobre as Cortes Martynianas, o Senado Real, a Câmara dos Comuns e o Tribunato dos Povos, e fixa o regime de deliberação, de instalação e de publicidade das Cortes.",
+    "template": "atos/AL.04.2026.html",
+    "data": "2026-10-19",
+    "sha256": "ace3896f9a1c44bfc969e8bd0e73ea93dc7132e93a8c90464ce0147289c96d20",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Ato Legislativo",
+    "estado": "sancionado",
+    "publicado_em": "2026-10-19T16:32:40"
+  },
+  {
+    "designador": "DR.21.2026",
+    "titulo": "Decreto Real nº 21/2026",
+    "ementa": "Dispõe sobre o Padrão Documental do Reino Martyniano e adota a sua versão 2.0.",
+    "template": "atos/DR.21.2026.html",
+    "data": "2026-10-19",
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Decreto Real",
+    "estado": "sancionado",
+    "publicado": true,
+    "publicado_em": "2026-10-19T17:00:43"
   }
 ]

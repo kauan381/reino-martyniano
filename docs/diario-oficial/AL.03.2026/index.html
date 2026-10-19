@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Cabeça e folha do ato — forma do Diário Oficial</title>
+<title>Ato Legislativo nº 03/2026 — Diário Oficial do Reino Martyniano</title>
 <style>
   /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
   @font-face{
@@ -22,19 +22,19 @@
   }
 
   :root{
-    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — fixado em 30/09/2026 */
-    --papel:#f5f0eb;
-    --papel-linha:#e6ddc9;
-    --ouro-traco:#9a7d21;
-    --ouro:#b08d42;
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
     --tinta:#1c1a18;
-    --azul-noite:#10213a;
+    --ouro:#b08d42;
     --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
 
     --site-fundo:#070d1c;
     --site-texto:#f0f4fb;
-    --site-sub:#b4c2db;
-    --site-ouro:#d6b23c;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--site-fundo);color:var(--site-texto);
@@ -53,194 +53,164 @@
     -webkit-hyphens:none;
     text-align:left;
   }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
 
   /* ── CABEÇA DO ATO ──────────────────────────────────────── */
   .cabeca-ato{
     text-align:center;
-    padding-bottom:30px;
-    margin-bottom:34px;
-    border-bottom:2px solid var(--ouro-traco);
+    margin-bottom:40px;
   }
-  .cabeca-ato .selo-ato,
+  /* brasão sem quadro, no alto, centralizado */
   .cabeca-ato .brasao-ato{
-    width:112px; height:112px;
+    width:118px; height:104px;
     object-fit:contain;
-    display:block; margin:0 auto 20px;
+    display:block; margin:0 auto 22px;
   }
-  .cabeca-ato .orgao{
-    font-size:11px; font-weight:800; letter-spacing:4.4px;
-    text-transform:uppercase; color:var(--ouro-traco);
-    margin:0 0 6px;
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
   }
-  .cabeca-ato .coroa-linha{
-    font-size:10px; letter-spacing:2.8px; text-transform:uppercase;
-    color:#8a7a5c; margin:0 0 26px;
-  }
-  .cabeca-ato .titulo-ato{
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
     font-family:'Playfair Display',serif;
-    font-size:27px; font-weight:700; line-height:1.3;
-    color:var(--tinta); margin:0 0 12px;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
   }
-  .cabeca-ato .epigrafe{
-    font-style:italic; font-size:14.5px; line-height:1.65;
-    color:#6b5a3e; margin:0 auto; max-width:640px;
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
   }
 
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
   /* ── CORPO ──────────────────────────────────────────────── */
-  /* ── TIPOGRAFIA DA LEI — escala hierárquica ──────────────
-     Corpo 16,5 · Capítulo 13,5 · Título 22 · Parte 26
-     O respiro separa os blocos mais que o tamanho.         */
   .corpo-ato p{
-    font-size:16.5px; line-height:1.9;
-    margin:0 0 18px;
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
     text-align:left;
     hyphens:none;
     -webkit-hyphens:none;
   }
-  /* preâmbulo — o "Nós, ..." */
-  .corpo-ato p.preambulo{
-    text-align:justify;
-    margin-bottom:30px;
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
   }
-  /* incisos — recuados e com respiro menor */
-  .corpo-ato p.inciso{
-    padding-left:34px;
-    margin:0 0 9px;
-    text-align:left;
-  }
-  /* fecho, assinatura, local — a parte final */
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
   .corpo-ato p.fecho{
     text-align:center;
     font-weight:700;
-    margin:40px 0 44px;
-    letter-spacing:.4px;
-  }
-  .corpo-ato p.assinatura{
-    text-align:center;
-    font-weight:700;
-    margin:0 0 6px;
-  }
-  .corpo-ato p.local{
-    text-align:center;
-    font-size:15px;
-    color:#6b5a3e;
-    margin:0 0 18px;
-  }
-  .corpo-ato p.assinatura-digital{
-    text-align:center;
-    font-size:14px;
-    font-style:italic;
-    color:#6b5a3e;
     margin:22px 0 0;
   }
-  /* ── ANEXO — as pranchas dos símbolos ─────────────────────── */
-  .corpo-ato .anexo{
-    margin-top:64px;
-    padding-top:34px;
-    border-top:2px solid var(--ouro-traco);
-  }
-  .corpo-ato .anexo-titulo{
-    font-family:'Playfair Display',serif;
-    font-size:20px; font-weight:700; color:var(--ouro-traco);
-    text-align:center; letter-spacing:2.4px;
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
     margin:0 0 8px;
   }
-  .corpo-ato .anexo-linha{
-    text-align:center; font-size:14px; color:#6b5a3e;
-    margin:0 0 38px;
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
   }
-  .corpo-ato .anexo-peca{
-    margin:0 0 44px;
-    text-align:center;
-    page-break-inside:avoid;
-  }
-  .corpo-ato .anexo-peca img{
-    max-width:100%;
-    max-height:420px;
-    object-fit:contain;
-    margin:0 auto 16px;
-    display:block;
-  }
-  .corpo-ato .anexo-peca figcaption{
-    font-size:13.5px;
-    line-height:1.7;
-    color:#5a4a35;
-    text-align:left;
-    max-width:640px;
-    margin:0 auto;
-  }
-  .corpo-ato .anexo-nota{
-    font-size:13.5px;
-    line-height:1.75;
-    color:#5a4a35;
-    border-left:2px solid var(--papel-linha);
-    padding-left:16px;
-    margin:0 0 18px;
-    text-align:left;
-  }
-  /* T1 — PARTE / LIVRO */
-  .corpo-ato h1{
-    font-family:'Playfair Display',serif;
-    font-size:26px; font-weight:700; color:#2a2116;
-    text-align:center; letter-spacing:.5px;
-    margin:52px 0 10px;
-  }
-  /* T2 — TÍTULO */
+  /* títulos — TÍTULO I, II... */
   .corpo-ato h2{
     font-family:'Playfair Display',serif;
-    font-size:22px; font-weight:700; color:var(--ouro-traco);
-    margin:46px 0 20px;
-    text-align:center;
-    letter-spacing:.3px;
-    line-height:1.3;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
   }
-  /* T3 — CAPÍTULO / SEÇÃO */
+  /* capítulos — CAPÍTULO I, II... */
   .corpo-ato h3{
-    font-size:13.5px; font-weight:700; letter-spacing:1.8px;
-    text-transform:uppercase; color:#7a6845;
-    margin:34px 0 14px;
-    text-align:center;
-    line-height:1.45;
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
   }
-  /* parágrafo de artigo — o § e o inciso */
-  .corpo-ato p > strong:first-child{
-    color:#2a2116;
-  }
-  /* citação / epígrafe dentro do corpo */
-  .corpo-ato blockquote{
-    margin:20px 0 20px 34px;
-    padding-left:16px;
-    border-left:2px solid var(--papel-linha);
-    font-style:italic; font-size:15.5px; color:#6b5a3e;
-  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
   .corpo-ato hr{
-    border:0; border-top:1px solid var(--papel-linha);
-    margin:34px 0;
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
   }
-  .corpo-ato strong{color:#2a2116}
 
-  /* ── FECHO / FÉ PÚBLICA ─────────────────────────────────── */
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
   .fecho-ato{
-    margin-top:52px; padding-top:24px;
-    border-top:2px solid var(--ouro-traco);
+    margin-top:54px;
     text-align:center;
   }
-  .fecho-ato .selo-fecho{
-    width:76px; height:76px; object-fit:contain;
-    display:block; margin:0 auto 16px;
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
   }
-  .fecho-ato p{
-    font-size:12.5px; line-height:1.9; color:#6b5a3e;
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
   }
-  .fecho-ato code{
-    font-family:monospace; font-size:12px;
-    color:var(--ouro-traco); word-break:break-all;
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
   }
 
   @media (max-width:760px){
     .folha-ato{padding:32px 22px 38px; margin-top:22px}
-    .cabeca-ato .titulo-ato{font-size:20px}
-    .corpo-ato p{font-size:15px; line-height:1.8}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
   }
 </style>
 </head>
@@ -249,14 +219,18 @@
 <!-- ══════════════ A FOLHA DO ATO ══════════════ -->
 <div class="folha-ato">
 
+  <div class="filete"></div>
+
   <!-- CABEÇA -->
   <header class="cabeca-ato">
     <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
-    <p class="orgao">Coroa de Estado Martyniana</p>
-    <p class="coroa-linha">Soberano Cartório Nacional do Reino Martyniano</p>
-    <h1 class="titulo-ato">Ato Legislativo nº 03/2026</h1>
-    <p class="epigrafe"></p>
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Ato Legislativo</h1>
+    <p class="numero-ato">Nº 03/2026</p>
+    <p class="ementa">Dispõe sobre o Direito Nobiliárquico, o Pariato Martyniano, a Escada Nobiliárquica, as Ordens Reais, o Estatuto Consortial e a Sucessão ao Trono Martyniano, e dá outras providências.</p>
   </header>
+
+  
 
   <!-- CORPO -->
   <div class="corpo-ato">
@@ -336,12 +310,16 @@
 
   <!-- FECHO -->
   <footer class="fecho-ato">
-    <img class="selo-fecho" src="../../static/selo_estado.png" alt="Selo de Fé Pública">
-    <p>
-      Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública<br>
-      Documento oficial do Reino Martyniano<br>
-      Designador AL.03.2026 · Integridade SHA-256 <code></code>
-    </p>
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 7 de outubro de 2026, em Kauan-Grado<br>Código de autenticação AL032026R43418A189E<br>SHA-256 43418a189ebbe5567e8c92b636e20d07…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 253.000 48" width="253.000" height="48" role="img" aria-label="Codigo de barras AL032026R43418A189E" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="27.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="36.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="57.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="60.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="113.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="116.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="124.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="126.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="138.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="145.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="150.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="160.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="166.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="170.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="178.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="183.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="193.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="202.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="204.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="212.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="215.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="223.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="228.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="235.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="239.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="241.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">AL032026R43418A189E</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador AL.03.2026</p>
   </footer>
 
 </div>

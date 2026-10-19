@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Decreto Real nº 21/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Decreto Real</h1>
+    <p class="numero-ato">Nº 21/2026</p>
+    <p class="ementa">Dispõe sobre o Padrão Documental do Reino Martyniano e adota a sua versão 2.0.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>O Rei do Reino Martyniano, no uso de suas atribuições e da competência que lhe confere a Constituição,</p>
+<p>CONSIDERANDO que a forma do documento oficial é parte da autoridade do ato, e não ornamento dele;</p>
+<p>CONSIDERANDO que os atos do Reino passaram a conviver com dois desenhos, o fixado em 30 de setembro de 2026 e o que ora se adota;</p>
+<p>CONSIDERANDO que a assinatura do Soberano e a prova do caminho percorrido pelo ato devem constar do próprio documento, e não de registro externo;</p>
+<p>CONSIDERANDO a decisão de 19 de outubro de 2026, tomada após o teste do desenho no Ato Legislativo nº 04/2026;</p>
+<p class="proclamacao">D E C R E T A M O S :</p>
+<p><strong>Art. 1º</strong> Fica adotado, como padrão único dos documentos oficiais do Reino Martyniano, o Padrão Documental v2.0, que acompanha este Decreto como Anexo.</p>
+<p><strong>Art. 2º</strong> O padrão rege a forma dos Atos Legislativos, dos Atos Constitucionais, dos Decretos Reais e de todo documento da Coroa de Estado publicado no Diário Oficial.</p>
+<p><strong>Art. 3º</strong> O documento oficial é branco, de tinta ferro-gálica, e traz, nesta ordem, o brasão de armas sem moldura, a designação do Reino em versaletes, o tipo e o número do ato, a ementa centralizada, o corpo e o fecho.</p>
+<p><strong>Art. 4º</strong> O corpo é composto em EB Garamond, com os títulos em Playfair, servidas as fontes localmente, alinhado à esquerda, sem hifenização, sem travessão e sem emoji.</p>
+<p><strong>Art. 5º</strong> O fecho do ato é composto pela cifra real, pela assinatura do Soberano, pelo nome e pelo cargo, pela linha de assinatura digital com o código de autenticação e o resumo criptográfico, pela chancela da Coroa e pelo código de barras de rastreio.</p>
+<p><strong>Art. 6º</strong> A assinatura do Soberano é requisito de validade do ato. O ato que não a trouxer é nulo.</p>
+<p><strong>Art. 7º</strong> O bloco de aprovação das casas consta do ato somente quando houver deliberação registrada em ata, e as datas são as da sessão. É vedado publicá-lo com data estimada, prevista ou de exemplo.</p>
+<p><strong>Art. 8º</strong> O ato é publicado em dois formatos, a página do Diário Oficial e o documento em PDF, que devem guardar o mesmo desenho e o mesmo texto.</p>
+<p><strong>Art. 9º</strong> O Padrão Documental de 30 de setembro de 2026 fica revogado, ressalvados os atos já publicados, que permanecem como foram publicados.</p>
+<p><strong>Art. 10.</strong> Este Decreto entra em vigor na data de sua publicação.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+  </div>
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 19 de outubro de 2026, em Kauan-Grado<br>Código de autenticação DR212026R5670EFAC66<br>SHA-256 5670efac6665e2f74be77b88b6640c51…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 253.000 48" width="253.000" height="48" role="img" aria-label="Codigo de barras DR212026R5670EFAC66" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="28.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="37.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="57.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="62.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="112.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="117.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="124.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="128.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="138.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="145.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="149.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="160.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="168.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="173.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="177.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="181.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="194.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="201.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="205.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="212.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="216.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="222.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="226.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="235.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="239.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="241.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">DR212026R5670EFAC66</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador DR.21.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
