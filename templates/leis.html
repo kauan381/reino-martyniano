@@ -13,12 +13,13 @@
   <div class="card wide">
     <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Leis e Atos</span></div>
     <h2>Leis e Atos do Reino</h2>
-    <p class="sub-text">Consulta pública das normas e leis do Estado Martyniano.</p>
+    <p class="sub-text">Consulta pública das normas e leis do Estado Martyniano, por categoria.</p>
 
     <h3 class="sec">Categorias de atos normativos</h3>
     <div class="grid-2">
       {% for c in est.categorias_leis %}
-      <a class="item-lei" href="/diario-oficial">{{ c }}</a>
+      {% set grupo = 'Constituição' if c == 'Constituição' else ('Atos Legislativos' if c == 'Atos Legislativos' else ('Decretos Reais' if c == 'Decretos Reais' else ('Resoluções' if c == 'Resoluções' else 'Outros'))) %}
+      <a class="item-lei" href="/diario-oficial?tipo={{ grupo|urlencode }}">{{ c }}</a>
       {% endfor %}
     </div>
   </div>

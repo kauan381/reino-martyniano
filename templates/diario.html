@@ -3,7 +3,22 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diário Oficial — Reino Martyniano</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}"></head>
+<link rel="stylesheet" href="{{ url_for('static', filename='institucional.css') }}">
+<style>
+  /* Abas do Diário Oficial — separação por tipo de ato */
+  .abas { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 14px; }
+  .aba {
+    background:#0b1220; color:#c9d4e4; border:1px solid #2a3b55;
+    padding:8px 16px; border-radius:8px; cursor:pointer; font-size:14px;
+    font-family:inherit; transition:all .15s;
+  }
+  .aba:hover { border-color:#b08d42; color:#f0f4fb; }
+  .aba.ativa { background:#b08d42; color:#0b1220; border-color:#b08d42; font-weight:600; }
+  .ato-item { display:flex; }
+  .ato-item.oculto { display:none; }
+  .ato-data { white-space:nowrap; }
+</style>
+</head>
 <body>
 <header class="topbar">
   <div class="logo"><img src="/static/bandeira_nacional.png" class="mini" alt="Bandeira"> Reino <span>Martyniano</span></div>
@@ -13,17 +28,27 @@
   <div class="card wide">
     <div class="breadcrumb"><a href="/">Início</a><span>›</span><span>Diário Oficial</span></div>
     <h2>Diário Oficial do Reino</h2>
-    <p class="sub-text">Atos, normas e publicações oficiais do Estado.</p>
+    <p class="sub-text">Atos, normas e publicações oficiais do Estado, separados por tipo.</p>
 
     {% if atos %}
     <h3 class="sec">Atos publicados</h3>
+    <div class="abas" id="abas">
+      <button class="aba ativa" data-tipo="todos">Todos</button>
+      <button class="aba" data-tipo="Constituição">Constituição</button>
+      <button class="aba" data-tipo="Atos Legislativos">Atos Legislativos</button>
+      <button class="aba" data-tipo="Decretos Reais">Decretos Reais</button>
+      <button class="aba" data-tipo="Resoluções">Resoluções</button>
+      <button class="aba" data-tipo="Outros">Outros</button>
+    </div>
     <div class="atos-lista">
       {% for a in atos %}
-      <a class="ato-item" href="/diario-oficial/{{ a.designador }}">
+      {% set prefixo = a.designador.split('.')[0] %}
+      {% set grupo = 'Constituição' if prefixo == 'CF' else ('Atos Legislativos' if prefixo == 'AL' else ('Decretos Reais' if prefixo == 'DR' else ('Resoluções' if prefixo == 'RES' else 'Outros'))) %}
+      <a class="ato-item" data-tipo="{{ grupo }}" href="/diario-oficial/{{ a.designador }}">
         <span class="ato-desig">{{ a.designador }}</span>
         <span class="ato-corpo">
           <strong>{{ a.titulo }}</strong>
-          {% if a.ementa %}<span class="ato-ementa">{{ a.ementa }}</span>{% endif %}
+          {% if a.ementa or a.epigrafe %}<span class="ato-ementa">{{ a.ementa or a.epigrafe }}</span>{% endif %}
         </span>
         <span class="ato-data">{{ a.data or 'sem data' }}</span>
       </a>
@@ -53,5 +78,24 @@
   </div>
 </main>
 <footer>Reino Martyniano · Estado Digital · Diário Oficial</footer>
+<script>
+  (function () {
+    var abas = document.querySelectorAll('#abas .aba');
+    var itens = document.querySelectorAll('.ato-item');
+    function filtra(tipo) {
+      abas.forEach(function (b) { b.classList.toggle('ativa', b.getAttribute('data-tipo') === tipo); });
+      itens.forEach(function (i) {
+        var mostra = tipo === 'todos' || i.getAttribute('data-tipo') === tipo;
+        i.classList.toggle('oculto', !mostra);
+      });
+    }
+    abas.forEach(function (b) {
+      b.addEventListener('click', function () { filtra(b.getAttribute('data-tipo')); });
+    });
+    var params = new URLSearchParams(window.location.search);
+    var tipoInicial = params.get('tipo') || 'todos';
+    filtra(tipoInicial);
+  })();
+</script>
 </body>
 </html>
