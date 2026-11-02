@@ -212,6 +212,53 @@
     .corpo-ato p{font-size:14.5px; line-height:1.8}
     .fecho-ato .assinatura-imagem{width:190px; height:114px}
   }
+
+  /* ── Anexo: o Padrão Documental dentro do Decreto ───────────────── */
+  .anexo {
+    margin-top: 46px;
+    padding-top: 30px;
+    border-top: 2px solid var(--ouro-traco);
+  }
+  .anexo > h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; letter-spacing: 2.6px; text-transform: uppercase;
+    color: var(--ouro-escuro); text-align: center; margin: 0 0 6px;
+  }
+  .anexo .subtitulo {
+    text-align: center; font-size: 12.5px; letter-spacing: 1.4px;
+    color: #6b5a3e; margin: 0 0 26px;
+  }
+  .anexo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14.5px; color: var(--ouro-escuro);
+    text-align: left; margin: 26px 0 10px; letter-spacing: .3px;
+  }
+  .anexo h4 {
+    font-size: 11.5px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: #7a6845; margin: 18px 0 8px;
+  }
+  .anexo p, .anexo li {
+    font-size: 14.5px; line-height: 1.78; text-align: left;
+    margin: 0 0 10px;
+  }
+  .anexo ul { margin: 0 0 12px; padding-left: 20px; }
+  .anexo blockquote {
+    margin: 0 0 16px; padding: 8px 0 8px 16px;
+    border-left: 2px solid var(--ouro); font-style: italic; color: #4a3d28;
+  }
+  .anexo table {
+    width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 13px;
+  }
+  .anexo th {
+    background: #f6f1e4; color: #2a2116; font-weight: 700;
+    text-align: left; padding: 7px 9px; border: 1px solid #e0d5bd;
+  }
+  .anexo td {
+    padding: 7px 9px; border: 1px solid #e6ddc9; vertical-align: top;
+  }
+
+  .baixar-pdf{margin:26px 0 0;text-align:center;font-size:13px}
+  .baixar-pdf a{color:#8a6a1e;text-decoration:none;border-bottom:1px solid #b08d42;padding-bottom:2px}
 </style>
 </head>
 <body>
@@ -254,6 +301,313 @@
 <p class="fecho">O Rei o deseja.</p>
   </div>
 
+
+  <section class="anexo">
+<h2>ANEXO</h2>
+<p class="subtitulo">PADRÃO DOCUMENTAL DO REINO MARTYNIANO · VERSÃO 2.0</p>
+<blockquote>
+<p>Fixado em 19/out/2026, sob ordem de Sua Majestade, após o teste do esqueleto de
+Estado no Ato Legislativo nº 04/2026.</p>
+<p><strong>Este arquivo substitui o Padrão Documental de 30 de setembro de 2026 (v1.0), que
+fica arquivado como histórico. Não é emenda: é peça nova. Onde o v1.0 divergir, vale
+este v2.0.</strong></p>
+<p>Aplica-se a: Atos Legislativos, Atos Constitucionais, Decretos Reais, Diretivas Reais e
+todo documento da Coroa de Estado publicado no Diário Oficial. Vale do próximo ato em
+diante; os atos já publicados (Ato Legislativo nº 01/2026, Ato Legislativo nº 02/2026,
+Ato Legislativo nº 03/2026 e a Constituição) ficam como estão e não são reescritos.</p>
+</blockquote>
+<hr />
+<h3>1. O PAPEL E A TINTA</h3>
+<p>O papel oficial é <strong>branco</strong>. O marfim <code>#f5f0eb</code> deixa de ser o papel oficial.</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Valor</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fundo</td>
+<td><code>#ffffff</code> (branco)</td>
+<td>papel oficial de leitura</td>
+</tr>
+<tr>
+<td>Tinta do corpo</td>
+<td><code>#1c1a18</code> (ferro-gálica)</td>
+<td>nunca preto puro</td>
+</tr>
+<tr>
+<td>Ouro (fios e filetes)</td>
+<td><code>#b08d42</code></td>
+<td>traço, não mancha</td>
+</tr>
+<tr>
+<td>Ouro escuro (rótulos)</td>
+<td><code>#8a6a1e</code></td>
+<td>sobretítulos</td>
+</tr>
+</tbody>
+</table>
+<h3>2. A TIPOGRAFIA</h3>
+<table>
+<thead>
+<tr>
+<th>Uso</th>
+<th>Fonte</th>
+<th>Métrica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corpo do texto</td>
+<td><strong>EB Garamond</strong></td>
+<td>17px, entrelinha 1.65, alinhado à esquerda</td>
+</tr>
+<tr>
+<td>Tipo de ato e títulos</td>
+<td><strong>Playfair Display</strong></td>
+<td>caixa alta</td>
+</tr>
+<tr>
+<td>País (cabeçalho)</td>
+<td><strong>EB Garamond</strong></td>
+<td>versaletes, espaçadas</td>
+</tr>
+<tr>
+<td>Rótulos e sobretítulos</td>
+<td><strong>EB Garamond</strong></td>
+<td>tracking 3–4, caixa alta</td>
+</tr>
+<tr>
+<td>Designador e hash</td>
+<td>monoespaçada</td>
+<td>12px</td>
+</tr>
+</tbody>
+</table>
+<p><strong>REGRA CRÍTICA:</strong> as fontes são servidas por <code>@font-face</code> a partir dos arquivos
+locais. <strong>Nunca depender de CDN.</strong> A falha de não servir a fonte faz o navegador cair na
+sans-serif do sistema e o documento perde a identidade. Foi erro já sofrido.</p>
+<p>Arquivos (no portal, sob <code>static/fontes/</code>):</p>
+<ul>
+<li><code>static/fontes/EBGaramond.ttf</code> (e <code>EBGaramond-Italic.ttf</code>)</li>
+<li><code>static/fontes/PlayfairDisplay-Variable.ttf</code></li>
+</ul>
+<h3>3. O ESQUELETO DO DOCUMENTO</h3>
+<p>O esqueleto é o do documento oficial de Estado, na forma adotada no Ato Legislativo
+nº 04/2026. De cima para baixo:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Elemento</th>
+<th>Especificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Brasão</td>
+<td><strong>Brasão da Coroa de Estado</strong>, fundo transparente, no alto, centralizado, <strong>sem quadro nem moldura</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>País</td>
+<td><code>REINO MARTYNIANO</code>, em versaletes espaçadas</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tipo de ato</td>
+<td>caixa alta grande, em Playfair, com o <strong>número embaixo, em ouro</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ementa</td>
+<td>centralizada, em negrito</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Corpo</td>
+<td>em Garamond, <strong>alinhado à esquerda</strong>, sem hifenização</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Assinatura</td>
+<td><strong>centrada</strong> (e não à direita)</td>
+</tr>
+</tbody>
+</table>
+<h3>4. A HERÁLDICA E A LEI</h3>
+<p><strong>A hierarquia não é gosto: é o que a lei determina.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Peça</th>
+<th>Onde se usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brasão da Coroa de Estado</strong></td>
+<td>documentos legislativos (Atos Legislativos, Atos Constitucionais, Decretos Reais, Diretivas Reais) e documentos de identificação</td>
+</tr>
+<tr>
+<td><strong>Chancela da Coroa</strong></td>
+<td>fecho e autenticação dos <strong>atos normativos</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>A chancela dos atos normativos é a da Coroa, nunca o Grande Selo do Estado.</strong></p>
+<p><strong>PROIBIDO:</strong> usar o Grande Selo do Estado onde a norma manda chancela da Coroa, ou
+chancela onde a norma manda brasão.</p>
+<p><strong>PROIBIDO:</strong> qualquer peça cuja fita estampe o nome extinto "Reino de Martina"
+(Constituição, Art. 1º, § 1º: a denominação anterior fica formalmente extinta). A chancela
+deve trazer o nome vigente, <strong>REINO MARTYNIANO</strong>, nunca o nome extinto.</p>
+<p><strong>Extinto:</strong> o <strong>Brasão do Estado Martyniano</strong>, em coerência com a Unidade do Poder de
+Estado e com a extinção da antiga Administração Nacional. O Brasão da Coroa de Estado é o
+único brasão de esfera nacional; ministérios, conselhos e tribunais usam o Brasão da Coroa
+(ou selos próprios), não um brasão de Estado paralelo.</p>
+<p><strong>Peças do fecho e da assinatura (no portal, sob <code>static/</code>):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Peça</th>
+<th>Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brasão da Coroa de Estado</td>
+<td><code>static/brasao_coroa_estado.png</code></td>
+</tr>
+<tr>
+<td>Cifra real</td>
+<td><code>static/cifra_kmi.png</code></td>
+</tr>
+<tr>
+<td>Assinatura do Soberano</td>
+<td><code>static/assinatura_rei.png</code></td>
+</tr>
+<tr>
+<td>Chancela da Coroa (nome vigente)</td>
+<td><code>static/chancela_coroa_martyniano.png</code></td>
+</tr>
+</tbody>
+</table>
+<h3>5. O BLOCO DE APROVAÇÃO</h3>
+<p>O bloco de aprovação é <strong>OPCIONAL</strong>, e só entra com deliberação registrada.</p>
+<p><strong>Quando a Câmara dos Comuns e o Senado Real deliberarem</strong>, o ato traz o bloco em duas
+colunas, com o nome da casa à esquerda e a data à direita, entre dois fios de ouro. As
+datas são <strong>as da ata da sessão</strong>, nunca estimadas.</p>
+<p><strong>Quando não houver deliberação, o bloco não entra.</strong></p>
+<p><strong>PROIBIDO publicar o bloco com data de exemplo, de previsão ou de conveniência.</strong> O
+bloco afirma um fato — que aquela casa aprovou naquele dia —, e data sem ata da sessão é
+falsidade de forma.</p>
+<h3>6. O CORPO E A ESTRUTURA NORMATIVA</h3>
+<ul>
+<li>Parágrafos alinhados à <strong>esquerda</strong> (nunca justificado).</li>
+<li><strong><code>hyphens: none</code></strong> — documento oficial não hifeniza no meio da palavra.</li>
+<li><strong>Travessão longo (<code>—</code>) PROIBIDO no corpo do texto.</strong> Usar vírgula, dois-pontos ou
+  parênteses. <strong>Exceção:</strong> nos títulos e símbolos normativos (<code>CAPÍTULO I — Nome</code>,
+  <code>TÍTULO II — Nome</code>) e nos incisos, o travessão é a forma correta.</li>
+<li><strong>Emoji PROIBIDO</strong> em qualquer peça.</li>
+<li>Recuo de artigo: <code>padding-left: 20px</code>.</li>
+<li>Espaço entre parágrafos: respiro de 14px, não linha em branco dupla.</li>
+</ul>
+<h4>Estrutura normativa</h4>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Forma correta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artigo</td>
+<td>"Artigo 1º" (ordinal, sem travessão)</td>
+</tr>
+<tr>
+<td>Incisos</td>
+<td>I, II, III romanos maiúsculos, com travessão, terminando com ponto e vírgula</td>
+</tr>
+<tr>
+<td>Parágrafos</td>
+<td>"§ 1º"; o primeiro é "Parágrafo único"</td>
+</tr>
+<tr>
+<td>Alíneas</td>
+<td>a), b), c) minúsculas, com recuo</td>
+</tr>
+<tr>
+<td>Comando</td>
+<td><strong>"PROMULGAMOS"</strong> (plural majestático) nos Atos Legislativos e Constitucionais; <strong>"DECRETAMOS"</strong> nos Decretos e Diretivas Reais. Nunca "PROMULGA" no singular.</td>
+</tr>
+<tr>
+<td>Abertura</td>
+<td>"Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano..."</td>
+</tr>
+</tbody>
+</table>
+<h3>7. O FECHO</h3>
+<p>O fecho do documento tem quatro elementos, <strong>nesta ordem</strong>:</p>
+<ol>
+<li><strong>a cifra real</strong>, acima da assinatura;</li>
+<li><strong>a assinatura do Soberano</strong>, centrada, seguida do nome e do cargo;</li>
+<li><strong>a linha de assinatura digital</strong>, com a data, o local, o código de autenticação e o
+   SHA-256;</li>
+<li><strong>a chancela da Coroa</strong>, o código de barras Code128 e a linha de registro no Soberano
+   Cartório Nacional.</li>
+</ol>
+<p><strong>Fórmula de fechamento:</strong> <code>Registre-se, Publique-se e Cumpra-se.</code></p>
+<p><strong>Manifestação real (vigente).</strong> As fórmulas de manifestação real seguem obrigatórias:</p>
+<ul>
+<li><code>O Rei o deseja.</code> — decretos reais, diretivas reais e atos da Coroa (expressão final da vontade soberana);</li>
+<li><code>O Rei consente.</code> — concordância expressa;</li>
+<li><code>O Rei veta.</code> — discordância expressa;</li>
+<li><code>O Rei não se opõe.</code> — concordância tácita formalizada.</li>
+</ul>
+<h3>8. A ASSINATURA, A CHANCELA E O CÓDIGO DE BARRAS</h3>
+<p><strong>A assinatura é obrigatória.</strong> Nenhum ato sai sem a assinatura do Soberano no documento.
+A ausência de assinatura é <strong>vício de forma</strong>.</p>
+<p><strong>A chancela é a da Coroa</strong>, nunca o Grande Selo do Estado, nos atos normativos. E a
+chancela deve trazer o nome vigente, <strong>REINO MARTYNIANO</strong>, nunca o nome extinto.</p>
+<p><strong>O código de barras é obrigatório</strong> em todo ato publicado. É gerado em <strong>Code128</strong>, e
+codifica <strong>o designador do ato e o começo do hash</strong>. O número do código vai em <strong>linha
+própria, abaixo das barras, com folga</strong>. Não se desenham as barras com CSS: o código é
+gerado como imagem ou vetor e inserido como peça.</p>
+<h3>9. DOIS FORMATOS, UM SÓ DOCUMENTO</h3>
+<p>O ato existe em duas formas, e as duas saem <strong>do mesmo texto e do mesmo desenho</strong>:</p>
+<ul>
+<li><strong>HTML</strong>, para publicação no Diário Oficial;</li>
+<li><strong>PDF</strong>, para leitura, assinatura e arquivo.</li>
+</ul>
+<p>Se as duas formas divergirem no desenho, a divergência é <strong>defeito</strong>, e se corrige a que
+estiver errada.</p>
+<h3>10. CONFERÊNCIA ANTES DE PUBLICAR</h3>
+<p>Antes de publicar, roda-se esta lista:</p>
+<ol>
+<li><strong>Servir as fontes de verdade</strong>, e conferir que o título renderizou em Playfair e o
+   corpo em EB Garamond.</li>
+<li><strong>Contar os emblemas</strong>: brasão no topo, cifra acima da assinatura, chancela no fecho.</li>
+<li><strong>Buscar resíduo</strong> do nome extinto ("Reino de Martina", "Martina") em todo o documento.</li>
+<li><strong>Conferir o comando</strong>: <code>PROMULGAMOS</code> nos Atos Legislativos e nos Atos Constitucionais;
+   <code>DECRETAMOS</code> nos Decretos e nas Diretivas Reais, que é o verbo próprio deles. Nunca
+   <code>PROMULGA</code> no singular, e nunca <code>DECRETAMOS</code> em ato de lei.</li>
+<li><strong>Conferir o hash preenchido</strong>: o SHA-256 nunca pode ir vazio.</li>
+<li><strong>Conferir o código de barras legível</strong>, com o número em linha própria, abaixo das barras.</li>
+<li><strong>Conferir o bloco de aprovação</strong>: ausente quando não houver ata da sessão; presente
+   somente com a data real da ata.</li>
+<li><strong>Buscar travessão longo</strong> (<code>—</code>) no corpo e emoji em qualquer parte.</li>
+<li><strong>Conferir hifenização desligada</strong> e corpo alinhado à esquerda.</li>
+<li><strong>Retratar e OLHAR a peça renderizada.</strong> O que não se olhou, não se afirmou.</li>
+</ol>
+  </section>
+
+
+  <p class="baixar-pdf"><a href="./DR.21.2026.pdf" download>Baixar este ato em PDF (DR.21.2026)</a></p>
   <!-- FECHO -->
   <footer class="fecho-ato">
     <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">

@@ -78,5 +78,20 @@
     "estado": "sancionado",
     "publicado": true,
     "publicado_em": "2026-10-19T17:00:43"
+  },
+  {
+    "designador": "ATA.01.2026",
+    "titulo": "ATA DE INSTALAÇÃO DA CÂMARA DOS COMUNS",
+    "ementa": "Registra a sessão de instalação da Câmara dos Comuns das Cortes Martynianas, nos termos dos artigos 15 e 33 do Ato Legislativo nº 04/2026.",
+    "data": "28/10/2026",
+    "sha256": "1622418765e8213328e34a380b86fa8e31df197a0ac80662196f0b1c8ae414fe",
+    "pagina": "ATA.01.2026/index.html",
+    "fonte": "/home/usuario/Reino/reino-martyniano/docs/diario-oficial/ATA.01.2026/index.html",
+    "preparado_em": "2026-10-28T12:30:00",
+    "publicado": true,
+    "categoria": "Atas das Cortes",
+    "nome": "Ata de Instalação da Câmara dos Comuns",
+    "ano": "2026",
+    "publicado_em": "2026-10-28T12:30:00"
   }
 ]
