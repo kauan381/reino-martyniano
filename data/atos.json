@@ -119,6 +119,32 @@
     "publicado_em": "2026-11-03T14:41:35"
   },
   {
+    "designador": "DR.23.2026",
+    "titulo": "Decreto Real nº 23/2026",
+    "ementa": "Regulamenta a regência do cargo de Primeiro-Ministro pela magistratura digital, na forma do Artigo 26 do Ato Legislativo nº 01/2026, fixa os seus limites e dá outras providências.",
+    "template": "atos/DR.23.2026.html",
+    "data": "03/11/2026",
+    "sha256": "99dff08c24bb83f0073c03c16d5ece70aea2c4e7335af0fa5290dc95147e277b",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Decreto Real",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T16:01:00"
+  },
+  {
+    "designador": "DR.24.2026",
+    "titulo": "Decreto Real nº 24/2026",
+    "ementa": "Regulamenta o Conselho da Coroa de Estado, fixa a sua composição, o seu provimento, as suas competências e o seu funcionamento, e dá outras providências.",
+    "template": "atos/DR.24.2026.html",
+    "data": "03/11/2026",
+    "sha256": "292ffd69b12712efc722e708555a0f73178ec68a49bebbf881b4e0f46f1025e0",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Decreto Real",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T16:03:40"
+  },
+  {
     "designador": "ATA.01.2026",
     "titulo": "ATA DE INSTALAÇÃO DA CÂMARA DOS COMUNS",
     "ementa": "Registra a sessão de instalação da Câmara dos Comuns das Cortes Martynianas, nos termos dos artigos 15 e 33 do Ato Legislativo nº 04/2026.",
