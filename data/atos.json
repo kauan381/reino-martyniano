@@ -106,6 +106,19 @@
     "publicado_em": "2026-10-19T17:00:43"
   },
   {
+    "designador": "DR.22.2026",
+    "titulo": "Decreto Real nº 22/2026",
+    "ementa": "Adota o Estandarte Real do Reino Martyniano, descreve o seu brasão, fixa o seu significado, o seu regime de uso e a sua proteção, e dá outras providências.",
+    "template": "atos/DR.22.2026.html",
+    "data": "03/11/2026",
+    "sha256": "f6681848e575f2cf4c87f532952153458b0e5c24853b7ac4e37bec8934c2aedd",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Decreto Real",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T14:41:35"
+  },
+  {
     "designador": "ATA.01.2026",
     "titulo": "ATA DE INSTALAÇÃO DA CÂMARA DOS COMUNS",
     "ementa": "Registra a sessão de instalação da Câmara dos Comuns das Cortes Martynianas, nos termos dos artigos 15 e 33 do Ato Legislativo nº 04/2026.",

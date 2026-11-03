@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Decreto Real nº 22/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+  /* tabela do anexo (relação de atos recepcionados) */
+  .corpo-ato table.anexo-tabela{
+    width:100%; border-collapse:collapse; margin:6px 0 22px;
+    font-size:12.5px; line-height:1.55; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th,
+  .corpo-ato table.anexo-tabela td{
+    border:1px solid var(--ouro); padding:6px 8px; vertical-align:top; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th{
+    background:#faf6ec; color:var(--ouro-escuro); font-weight:700;
+    letter-spacing:.4px; font-size:11px; text-transform:uppercase;
+  }
+  .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
+
+  /* ── LINK DO PDF DE ARQUIVO ─────────────────────────────── */
+  .baixar-pdf{
+    margin:28px 0 6px; text-align:center; font-size:13px; letter-spacing:.5px;
+  }
+  .baixar-pdf a{
+    color:var(--ouro-escuro, #8a6a1e); text-decoration:none;
+    border-bottom:1px solid rgba(138,106,30,.45); padding-bottom:2px;
+  }
+  .baixar-pdf a:hover{ border-bottom-color:#8a6a1e; }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="/static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Decreto Real</h1>
+    <p class="numero-ato">Nº 22/2026</p>
+    <p class="ementa">Adota o Estandarte Real do Reino Martyniano, descreve o seu brasão, fixa o seu significado, o seu regime de uso e a sua proteção, e dá outras providências.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé Todo-Poderoso e pela vontade do Povo Martyniano, no uso da prerrogativa que a Constituição do Reino Martyniano nos confere sobre os símbolos da Coroa, e considerando que o Estandarte Real representa o Monarca e, por ele, a Monarquia e a Coroa; considerando que as três Coroas são de uso histórico nos símbolos da Casa Real desde 2021; e considerando que o Ano de 2015 é o da fundação do Reino, e que a sua inscrição no Estandarte é afirmação de origem e não ornamento,</p>
+<p class="proclamacao">D E C R E T A M O S :</p>
+<p><strong>Artigo 1°</strong> Fica adotado, como <strong>Estandarte Real do Reino Martyniano</strong>, o pavilhão descrito no Artigo 2º, de uso privativo do Soberano.</p>
+<p><strong>Artigo 2°</strong> O Estandarte Real compõe-se de:</p>
+<p class="inciso">I — campo de blau, carregado de cruz de prata filetada de ouro;</p>
+<p class="inciso">II — no centro da cruz, medalhão circular de prata, com anel de blau e orla de ouro, sobre o qual assenta a <strong>Coroa Martyniana</strong>, de ouro, forrada de goles, fechada em arcos de pérolas, com florões de lis na base e remate globoso de ouro no topo;</p>
+<p class="inciso">III — no cantão do chefe, ao lado da tralha, fênix de ouro, surgente, de asas estendidas;</p>
+<p class="inciso">IV — no cantão do chefe, ao lado da batente, escudo de blau, orlado de ouro, com martelo e ramo de louro em chefe e sol em esplendor na ponta;</p>
+<p class="inciso">V — no cantão da ponta, ao lado da tralha, três coroas de ouro, dispostas em triângulo;</p>
+<p class="inciso">VI — no cantão da ponta, ao lado da batente, o Ano de 2015, em ouro.</p>
+<p><strong>Artigo 3°</strong> As três Coroas têm o seguinte significado, que integra o brasão e vincula a sua leitura oficial:</p>
+<p class="inciso">I — a Coroa superior representa Javé, em Sua Majestade, poder e plenitude;</p>
+<p class="inciso">II — a Coroa à direita representa o poder que Javé cedeu ao homem, pelo direito revelado e divino de governar;</p>
+<p class="inciso">III — a Coroa à esquerda representa a Coroa Martyniana e a sua parte política, agindo pela sabedoria.</p>
+<p class="paragrafo">Parágrafo único. A tríade forma a existência do Estado na ordem Espiritual, Propósito e Política, e retorna em ciclo, sem que nenhuma das três se sobreponha às demais.</p>
+<p><strong>Artigo 4°</strong> A Coroa assente no medalhão central é a <strong>Coroa Martyniana</strong>, insígnia do Reino, e não se confunde com as três Coroas do cantão: distingue-se pelos arcos de pérolas, pelos florões de lis e pelo forro de goles, que as três não possuem.</p>
+<p><strong>Artigo 5°</strong> O escudo de orla representa as famílias colaterais do ramo reinante, e a sua presença no Estandarte afirma o vínculo entre a Casa Reinante e os ramos dela derivados.</p>
+<p><strong>Artigo 6°</strong> O ano de 2015, inscrito no cantão da ponta, registra a fundação do Reino e integra o brasão como elemento de origem.</p>
+<p><strong>Artigo 7°</strong> O Estandarte Real é hasteado:</p>
+<p class="inciso">I — nos Paços e edifícios da Coroa, quando o Soberano neles se encontrar;</p>
+<p class="inciso">II — no veículo do Soberano, em deslocamento oficial;</p>
+<p class="inciso">III — nas cerimônias de Estado, à direita da Bandeira Nacional e do Brasão de Armas;</p>
+<p class="inciso">IV — nos atos de aclamação, coroação, aniversário do Reino e luto oficial, na forma do regulamento.</p>
+<p><strong>Artigo 8°</strong> É vedado o uso do Estandarte Real por particular, por partido político, por associação ou por empresa, bem como a sua reprodução comercial, a alteração do seu desenho e a sua utilização em propaganda de qualquer natureza.</p>
+<p class="paragrafo">Parágrafo único. A violação deste artigo sujeita o responsável às sanções do Código de Defesa da Honra Nacional e às demais previstas em lei.</p>
+<p><strong>Artigo 9°</strong> O Estandarte Real é depositado no acervo heráldico da Coroa em mestre vetorial, com as proporções, as cores e as posições fixadas no Anexo deste Decreto, que dele é parte integrante.</p>
+<p><strong>Artigo 10°</strong> As cores oficiais do Estandarte são o blau, a prata, o ouro, o goles e o sable, na gradação fixada no Anexo.</p>
+<p><strong>Artigo 11°</strong> Este Decreto entra em vigor na data de sua publicação, revogadas as disposições em contrário.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+<h2>ANEXO ÚNICO — DESENHO, PROPORÇÕES E CORES</h2>
+<p><strong>1. Proporção.</strong> O Estandarte Real tem a proporção de <strong>3:2</strong>, na razão de três unidades de largura para duas de altura. O mestre digital depositado mede 2.560 por 1.707 pixels.</p>
+<p><strong>2. Cores oficiais.</strong> As cinco tincturas do Estandarte, com o nome heráldico, o uso e o valor hexadecimal, são:</p>
+<table class="anexo-tabela">
+<thead><tr><th>Tinctura</th><th>Uso no Estandarte</th><th>Hexadecimal</th></tr></thead>
+<tbody>
+<tr><td>Blau</td><td>campo e anel do medalhão</td><td>#1B3E8C</td></tr>
+<tr><td>Prata</td><td>cruz, campo do medalhão</td><td>#F2F2EC</td></tr>
+<tr><td>Ouro</td><td>filete da cruz, Coroa Martyniana, fênix, escudo, três Coroas e Ano</td><td>#C9A227</td></tr>
+<tr><td>Goles</td><td>forro da Coroa Martyniana</td><td>#8E1F27</td></tr>
+<tr><td>Sable</td><td>contornos e sombras de definição</td><td>#241D18</td></tr>
+</tbody></table>
+<p><strong>3. Desenho.</strong> Sobre o campo de blau corre a cruz nórdica, de prata e filetada de ouro, com o braço vertical deslocado para a tralha, e as hastes alcançando as quatro bordas do pavilhão.</p>
+<p><strong>3.1.</strong> No cruzamento dos braços assenta o medalhão circular, formado, de fora para dentro, por orla de ouro, anel de blau e campo de prata.</p>
+<p><strong>3.2.</strong> Sobre o campo do medalhão assenta a Coroa Martyniana, de ouro e forrada de goles, fechada em arcos de pérolas, com florões de lis na base e remate globoso de ouro no topo.</p>
+<p><strong>3.3.</strong> Nos cantões, na ordem: no chefe à tralha, a fênix de ouro, surgente e de asas estendidas; no chefe à batente, o escudo de blau orlado de ouro, com martelo e ramo de louro em chefe e sol em esplendor na ponta; na ponta à tralha, as três Coroas de ouro em triângulo; na ponta à batente, o Ano de 2015, em ouro, em algarismos arábicos.</p>
+<p><strong>4. Peças depositadas.</strong> Integram este Anexo, como referência de desenho, o mestre vetorial em SVG, a cópia vetorial em PDF e a imagem de referência em PNG, arquivados no acervo heráldico da Coroa.</p>
+<p><strong>5. Redução.</strong> Em dimensões inferiores a vinte milímetros, admite-se versão simplificada, com supressão dos detalhes internos da fênix e do escudo, vedada a alteração das cores, das posições e da proporção.</p>
+<p><strong>6. Vedação de alteração.</strong> É vedada a alteração do desenho, a troca das cores, o acréscimo de elementos e a supressão de qualquer dos elementos descritos neste Anexo.</p>
+  </div>
+
+  
+  <p class="baixar-pdf"><a href="./DR.22.2026.pdf" download>Baixar este ato em PDF (DR.22.2026)</a></p>
+  
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="/static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="/static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 3 de novembro de 2026, em Kauan-Grado<br>Código de autenticação DR222026RF6681848E5<br>SHA-256 f6681848e575f2cf4c87f53295215345…</p>
+    <img class="chancela" src="/static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 242.000 48" width="242.000" height="48" role="img" aria-label="Codigo de barras DR222026RF6681848E5" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="28.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="37.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="58.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="62.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="113.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="118.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="122.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="126.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="134.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="139.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="145.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="147.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="156.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="161.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="166.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="171.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="179.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="182.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="193.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="200.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="205.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="212.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="215.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="224.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="228.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">DR222026RF6681848E5</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador DR.22.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
