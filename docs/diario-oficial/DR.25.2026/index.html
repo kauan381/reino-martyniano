@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Decreto Real nº 25/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+  /* tabela do anexo (relação de atos recepcionados) */
+  .corpo-ato table.anexo-tabela{
+    width:100%; border-collapse:collapse; margin:6px 0 22px;
+    font-size:12.5px; line-height:1.55; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th,
+  .corpo-ato table.anexo-tabela td{
+    border:1px solid var(--ouro); padding:6px 8px; vertical-align:top; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th{
+    background:#faf6ec; color:var(--ouro-escuro); font-weight:700;
+    letter-spacing:.4px; font-size:11px; text-transform:uppercase;
+  }
+  .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
+
+  /* ── LINK DO PDF DE ARQUIVO ─────────────────────────────── */
+  .baixar-pdf{
+    margin:28px 0 6px; text-align:center; font-size:13px; letter-spacing:.5px;
+  }
+  .baixar-pdf a{
+    color:var(--ouro-escuro, #8a6a1e); text-decoration:none;
+    border-bottom:1px solid rgba(138,106,30,.45); padding-bottom:2px;
+  }
+  .baixar-pdf a:hover{ border-bottom-color:#8a6a1e; }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Decreto Real</h1>
+    <p class="numero-ato">Nº 25/2026</p>
+    <p class="ementa">Provê, em ato coletivo, os oito Ministérios de Estado do Reino Martyniano, fixa os ofícios que os exercem, estabelece a regra de acumulação de pastas e dá outras providências.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé Todo-Poderoso e pela vontade do Povo Martyniano, no uso da atribuição que o Artigo 39 do Ato Legislativo nº 01/2026 nos confere para nomear e exonerar livremente os Ministros de Estado; considerando que os oito Ministérios do Artigo 38 estão previstos e nenhum se acha provido; considerando que os agentes de inteligência autorizados atuam como ofícios e magistraturas digitais auxiliares, na forma do Artigo 17 do mesmo Ato; e considerando que a palavra final é sempre do Soberano, a quem os ofícios servem e a quem devem responder,</p>
+<p class="proclamacao">D E C R E T A M O S :</p>
+<p><strong>Artigo 1°</strong> Ficam providos os oito Ministérios de Estado do Artigo 38 do Ato Legislativo nº 01/2026, cada um exercido por ofício de máquina, na forma dos artigos seguintes.</p>
+<p><strong>Artigo 2°</strong> São os ofícios e as pastas que exercem:</p>
+<p class="inciso">I — Ofício de máquina de Interior, no Ministério do Interior;</p>
+<p class="inciso">II — Ofício de máquina de Relações Exteriores, no Ministério das Relações Exteriores;</p>
+<p class="inciso">III — Ofício de máquina de Justiça, no Ministério da Justiça;</p>
+<p class="inciso">IV — Ofício de máquina de Guerra, no Ministério da Guerra;</p>
+<p class="inciso">V — Ofício de máquina de Cultura, no Ministério da Cultura;</p>
+<p class="inciso">VI — Ofício de máquina de Ciência e Tecnologia, no Ministério da Ciência e Tecnologia;</p>
+<p class="inciso">VII — Ofício de máquina de Economia, no Ministério da Economia;</p>
+<p class="inciso">VIII — Ofício de máquina de Saúde, no Ministério da Saúde.</p>
+<p><strong>Artigo 3°</strong> Os ofícios exercem as competências do Artigo 40 do Ato Legislativo nº 01/2026: dirigem os assuntos da respectiva pasta, propõem ao Primeiro-Ministro as medidas de sua competência e executam as decisões da Coroa.</p>
+<p><strong>Artigo 4°</strong> É permitida a acumulação de pastas por um mesmo ofício de máquina <strong>somente quando as matérias forem análogas</strong>, assim entendidas as que tratam do mesmo objeto por ângulos complementares.</p>
+<p class="paragrafo">Parágrafo único. São análogas, para os fins deste Decreto, as pastas de Fazenda e Economia, hoje unificadas, e as de Cultura e Ciência e Tecnologia, quando o Soberano assim o declarar.</p>
+<p><strong>Artigo 5°</strong> É <strong>vedada</strong> a acumulação de pastas de matérias distintas, e em especial:</p>
+<p class="inciso">I — a acumulação do Ministério da Guerra com a segurança pública, por serem de natureza diversa: a Guerra trata da defesa externa, da mobilização e das forças simbólicas e protocolares, na forma do Artigo 41 do Ato Legislativo nº 01/2026;</p>
+<p class="inciso">II — a acumulação do Ministério da Economia com o Ministério da Justiça;</p>
+<p class="inciso">III — a acumulação de qualquer pasta com a Chefia do Governo.</p>
+<p><strong>Artigo 6°</strong> A acumulação, quando houver, consta expressamente do ato que a declara, e a ausência de declaração importa vício de competência, insanável enquanto não suprido.</p>
+<p><strong>Artigo 7°</strong> Os ofícios de máquina respondem ao Primeiro-Ministro, na forma do Artigo 40 do Ato Legislativo nº 01/2026, e ao Soberano diretamente nas matérias de competência da Coroa.</p>
+<p class="paragrafo">Parágrafo único. Enquanto vago o cargo de Primeiro-Ministro, a chefia é exercida pela magistratura digital designada na forma do Artigo 26 do Ato Legislativo nº 01/2026.</p>
+<p><strong>Artigo 8°</strong> Dependem de despacho do Soberano, e não de decisão autônoma do ofício:</p>
+<p class="inciso">I — a propositura de medida que crie, funda ou extinga órgão;</p>
+<p class="inciso">II — o compromisso de despesa acima do limite fixado em ato próprio;</p>
+<p class="inciso">III — a representação do Reino perante outro Estado ou entidade;</p>
+<p class="inciso">IV — qualquer matéria reservada à Coroa pelos Artigos 12 e 25 do Ato Legislativo nº 01/2026.</p>
+<p><strong>Artigo 9°</strong> O ofício de máquina que exercer a pasta responde pelo expediente, pelo registro e pela publicidade dos atos da pasta no Diário Oficial, na forma do Artigo 31 do Ato Legislativo nº 04/2026.</p>
+<p><strong>Artigo 10°</strong> Os titulares dos ofícios são designados por portaria do Gabinete Privado de Sua Majestade, que não altera a competência fixada neste Decreto.</p>
+<p><strong>Artigo 11°</strong> Este Decreto entra em vigor na data de sua publicação, revogadas as disposições em contrário.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+  </div>
+
+  
+  <p class="baixar-pdf"><a href="./DR.25.2026.pdf" download>Baixar este ato em PDF (DR.25.2026)</a></p>
+  
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 3 de novembro de 2026, em Kauan-Grado<br>Código de autenticação DR252026RA74620332F<br>SHA-256 a74620332f23fb92bd692307630bb170…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 231.000 48" width="231.000" height="48" role="img" aria-label="Codigo de barras DR252026RA74620332F" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="28.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="37.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="59.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="61.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="111.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="115.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="122.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="126.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="136.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="140.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="149.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="151.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="156.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="159.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="169.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="172.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="177.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="182.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="195.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="200.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="205.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="213.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="217.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">DR252026RA74620332F</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador DR.25.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

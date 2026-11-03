@@ -145,6 +145,19 @@
     "publicado_em": "2026-11-03T16:03:40"
   },
   {
+    "designador": "DR.25.2026",
+    "titulo": "Decreto Real nº 25/2026",
+    "ementa": "Provê, em ato coletivo, os oito Ministérios de Estado do Reino Martyniano, fixa os ofícios que os exercem, estabelece a regra de acumulação de pastas e dá outras providências.",
+    "template": "atos/DR.25.2026.html",
+    "data": "03/11/2026",
+    "sha256": "a74620332f23fb92bd692307630bb1706287a6c9276e7f38f313add08acca6ea",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Decreto Real",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T16:10:05"
+  },
+  {
     "designador": "ATA.01.2026",
     "titulo": "ATA DE INSTALAÇÃO DA CÂMARA DOS COMUNS",
     "ementa": "Registra a sessão de instalação da Câmara dos Comuns das Cortes Martynianas, nos termos dos artigos 15 e 33 do Ato Legislativo nº 04/2026.",
