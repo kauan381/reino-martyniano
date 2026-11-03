@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ato Legislativo nº 05/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+  /* tabela do anexo (relação de atos recepcionados) */
+  .corpo-ato table.anexo-tabela{
+    width:100%; border-collapse:collapse; margin:6px 0 22px;
+    font-size:12.5px; line-height:1.55; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th,
+  .corpo-ato table.anexo-tabela td{
+    border:1px solid var(--ouro); padding:6px 8px; vertical-align:top; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th{
+    background:#faf6ec; color:var(--ouro-escuro); font-weight:700;
+    letter-spacing:.4px; font-size:11px; text-transform:uppercase;
+  }
+  .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Ato Legislativo</h1>
+    <p class="numero-ato">Nº 05/2026</p>
+    <p class="ementa">Institui o Direito Eleitoral do Reino Martyniano, cria o colégio eleitoral e a figura do Delegado Real, fixa o corpo eleitoral, a elegibilidade, os partidos, os referendos, o contencioso e o mandato, e prevê o Soberano Tribunal Eleitoral do Reino Martyniano (STERM), na forma do Artigo 34 do Ato Legislativo nº 04/2026.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé Todo-Poderoso e pela vontade do Povo Martyniano, no exercício da função legislativa que a Constituição do Reino Martyniano nos confere, e considerando que o Artigo 34 do Ato Legislativo nº 04/2026 determinou que o preenchimento dos assentos das Cortes seguiria o Direito Eleitoral, na ordem decidida pelo Soberano, primeiro as Cortes, depois a eleição; considerando que as Cortes já se acham instaladas e que os assentos de cidadão permanecem em expectativa; considerando que a cidadania martyniana tem registro próprio no Sistema Martyniano de Registro Civil, na forma dos Artigos 52, 53 e 56 do Ato Legislativo nº 01/2026; e considerando que o Poder Único da Coroa exige que o Soberano e a Família Real se conservem acima da disputa eleitoral,</p>
+<p class="proclamacao">P R O M U L G A M O S :</p>
+<h2>TÍTULO I — DOS PRINCÍPIOS</h2>
+<p><strong>Artigo 1°</strong> O voto é livre, facultativo, pessoal e igual, e o seu exercício não depende de gênero, orientação sexual, religião, origem, etnia, condição social, deficiência ou qualquer outra particularidade do eleitor.</p>
+<p><strong>Artigo 2°</strong> É vedada qualquer forma de coação, compra, troca ou indução do voto, e o eleitor que se sentir constrangido pode declarar o fato ao Soberano Tribunal Eleitoral, com sigilo.</p>
+<p><strong>Artigo 3°</strong> As Cortes deliberam e não decidem, na forma do Artigo 2º do Ato Legislativo nº 04/2026, e o voto popular, ainda que decida a eleição, não vincula a Coroa.</p>
+<p><strong>Artigo 4°</strong> O voto é registrado em sistema eletrônico do Reino e permanece sigiloso até a apuração.</p>
+<h2>TÍTULO II — DO CORPO ELEITORAL</h2>
+<p><strong>Artigo 5°</strong> Integram o corpo eleitoral os cidadãos civis com inscrição ativa no Sistema Martyniano de Registro Civil (SMRC) e Juramento de Lealdade prestado, na forma do Artigo 53 do Ato Legislativo nº 01/2026.</p>
+<p><strong>Artigo 6°</strong> Podem votar e responder a referendos os cidadãos a partir de dezesseis anos completos na data da votação.</p>
+<p><strong>Artigo 7°</strong> Não votam nem respondem a referendos:</p>
+<p class="inciso">I — os analfabetos, assim entendidos os que declararem não saber ler e escrever no ato da inscrição eleitoral, ou não puderem subscrever o próprio nome;</p>
+<p class="inciso">II — os indivíduos sob sanção do Estado, assim entendidos os condenados por decisão transitada em julgado a pena que implique suspensão de direitos políticos, e os sancionados por decisão administrativa grave da Coroa, publicada no Diário Oficial;</p>
+<p class="inciso">III — o Soberano e os membros da Família Real.</p>
+<p class="paragrafo">Parágrafo único. A suspensão do inciso II cessa com o cumprimento da pena ou com a reabilitação declarada pela Coroa, e o SMRC mantém registro de cada suspensão e do seu termo final.</p>
+<p><strong>Artigo 8°</strong> O Soberano e os membros da Família Real não votam e não respondem a referendos, por força do Poder Único da Coroa: quem sanciona, veta e avoca não disputa nem plebiscita.</p>
+<p><strong>Artigo 9°</strong> A cidadania de emancipação técnica não confere voto nem elegibilidade, na forma do Artigo 52 do Ato Legislativo nº 01/2026.</p>
+<p><strong>Artigo 10°</strong> A inscrição eleitoral é automática, decorre da cidadania civil ativa e é revista anualmente pelo SMRC.</p>
+<h2>TÍTULO III — DO COLÉGIO ELEITORAL E DO DELEGADO REAL</h2>
+<p><strong>Artigo 11°</strong> Cada Província e cada Unidade Administrativa Martyniana constitui um colégio eleitoral, na forma do Artigo 12 do Ato Legislativo nº 04/2026.</p>
+<p><strong>Artigo 12°</strong> Cada colégio eleitoral é representado por um <strong>Delegado Real</strong>, nomeado pela Coroa, com mandato de doze meses, renovável, e demissível a qualquer tempo por ato motivado.</p>
+<p><strong>Artigo 13°</strong> Compete ao Delegado Real:</p>
+<p class="inciso">I — formalizar, perante o Soberano Tribunal Eleitoral, o resultado da votação popular do seu colégio;</p>
+<p class="inciso">II — proferir o voto eleitoral do colégio;</p>
+<p class="inciso">III — zelar pela ordem e pela lisura do processo no território do colégio;</p>
+<p class="inciso">IV — lavrar relatório de ocorrências, publicado no Diário Oficial.</p>
+<p><strong>Artigo 14°</strong> O voto popular tem peso de escolha: o Delegado Real é <strong>vinculado</strong> ao resultado da votação popular do seu colégio e deve proferir o voto eleitoral no candidato ou na lista que obtiver a maioria dos votos válidos.</p>
+<p><strong>Artigo 15°</strong> Não havendo maioria absoluta na votação popular, o Delegado Real proferirá o voto eleitoral no candidato ou na lista de maior votação, vedada a escolha de terceiro não votado.</p>
+<p><strong>Artigo 16°</strong> O colégio que não realizar votação, por ausência de candidatos ou de eleitores, tem os seus votos eleitorais declarados em expectativa, e o Delegado Real não vota.</p>
+<p><strong>Artigo 17°</strong> Cada colégio elege três assentos de cidadão.</p>
+<p class="paragrafo">Parágrafo único. A circunscrição que atingir população superior ao triplo da média terá assento suplementar, na forma de regulamento da Coroa.</p>
+<p><strong>Artigo 18°</strong> Os assentos de máquina, exercidos por agentes da Burocracia Cibernética, não excedem um quarto dos assentos preenchidos de cada casa, observado o teto do Artigo 30 do Ato Legislativo nº 04/2026.</p>
+<h2>TÍTULO IV — DA ELEGIBILIDADE</h2>
+<p><strong>Artigo 19°</strong> É elegível o cidadão civil que, na data do registro da candidatura, tenha completado dezoito anos, inscrição eleitoral ativa há pelo menos noventa dias, e não se ache incurso nas vedações deste Ato.</p>
+<p><strong>Artigo 20°</strong> Não são elegíveis:</p>
+<p class="inciso">I — o portador de cargo vitalício;</p>
+<p class="inciso">II — o Tribuno dos Povos e os magistrados, enquanto no exercício;</p>
+<p class="inciso">III — o cidadão condenado por decisão transitada em julgado, enquanto durarem os efeitos da condenação;</p>
+<p class="inciso">IV — o cidadão que tenha perdido mandato nos doze meses anteriores;</p>
+<p class="inciso">V — o Delegado Real, no colégio em que exerce o cargo.</p>
+<p><strong>Artigo 21°</strong> É proibido empregar título de nobreza, ou referência a ele, em slogan partidário, nome de chapa, propaganda, material de campanha ou discurso eleitoral, dada a natureza de superioridade e de neutralidade da Coroa e do Oficialato.</p>
+<p class="paragrafo">Parágrafo único. A propaganda que infringir este artigo é retirada, e o candidato beneficiado perde o direito de concorrer naquela eleição.</p>
+<h2>TÍTULO V — DOS PARTIDOS</h2>
+<p><strong>Artigo 22°</strong> O partido político registra-se no SMRC, com estatuto, nome, sigla, órgãos de direção e no mínimo três cidadãos filiados com inscrição ativa.</p>
+<p><strong>Artigo 23°</strong> É vedado ao partido adotar nome, sigla, emblema ou símbolo que contenha título de nobreza, insígnia, brasão ou qualquer elemento da Coroa, do Oficialato ou dos Símbolos Nacionais.</p>
+<p><strong>Artigo 24°</strong> O partido apresenta ao SMRC, até trinta dias após a eleição, a declaração de gastos, e é vedado o financiamento por pessoa jurídica, por estrangeiro ou por entidade vinculada à Coroa.</p>
+<p><strong>Artigo 25°</strong> É nula a filiação obtida por coação, e o cidadão pode desfiliar-se a qualquer tempo, por declaração ao SMRC.</p>
+<h2>TÍTULO VI — DOS REFERENDOS</h2>
+<p><strong>Artigo 26°</strong> O referendo é convocado pela Coroa, por decreto que fixa a matéria, a data e a forma da consulta.</p>
+<p><strong>Artigo 27°</strong> Respondem ao referendo os mesmos cidadãos aptos a votar, vedados os do Artigo 7º e, por força do Artigo 8º, o Soberano e a Família Real.</p>
+<p><strong>Artigo 28°</strong> O resultado do referendo é publicado no Diário Oficial, com o número de respostas de cada opção, e tem efeito de recomendação ao Trono, que decide em ato próprio e fundamentado.</p>
+<p><strong>Artigo 29°</strong> É vedada a convocação de referendo sobre matéria que contrarie a Constituição, a forma monárquica, a Fé Ortodoxa Javenista Martyniana ou a integridade do território.</p>
+<h2>TÍTULO VII — DO SOBERANO TRIBUNAL ELEITORAL DO REINO MARTYNIANO</h2>
+<p><strong>Artigo 30°</strong> Fica previsto o <strong>Soberano Tribunal Eleitoral do Reino Martyniano (STERM)</strong>, a quem compete o registro de candidaturas e de partidos, a fiscalização do processo, a apuração, a proclamação dos eleitos e o julgamento do contencioso eleitoral em primeira instância.</p>
+<p><strong>Artigo 31°</strong> A competência do STERM é fixada por este Ato, e a sua instalação dar-se-á por ato da Coroa, observado o Artigo 32 do Ato Legislativo nº 01/2026, que reserva o exercício da jurisdição ao Supremo Tribunal do Reino Martyniano (STRM) e aos magistrados nomeados pelo Rei.</p>
+<p><strong>Artigo 32°</strong> Enquanto não instalado o STERM, as suas competências são exercidas pelo Tribuno dos Povos, com recurso ao STRM.</p>
+<p><strong>Artigo 33°</strong> O STERM compõe-se de três magistrados nomeados pelo Rei, com mandato de vinte e quatro meses, vedada a recondução imediata, e não pode ser integrado por membro de partido, por candidato ou por Delegado Real.</p>
+<h2>TÍTULO VIII — DAS NULIDADES E DOS CRIMES ELEITORAIS</h2>
+<p><strong>Artigo 34°</strong> São nulos os votos obtidos mediante compra, coação, fraude, uso de documento falso ou emprego de título de nobreza, e a nulidade alcança o candidato beneficiado.</p>
+<p><strong>Artigo 35°</strong> Constituem crime eleitoral, punível na forma do Código Penal Martyniano:</p>
+<p class="inciso">I — comprar ou vender voto;</p>
+<p class="inciso">II — coagir, ameaçar ou constranger eleitor;</p>
+<p class="inciso">III — fraudar o sistema de votação ou de apuração;</p>
+<p class="inciso">IV — promover boca de urna no dia da votação;</p>
+<p class="inciso">V — usar, em campanha, título de nobreza, insígnia ou símbolo da Coroa.</p>
+<h2>TÍTULO IX — DO MANDATO</h2>
+<p><strong>Artigo 36°</strong> O mandato é de doze meses, contado da posse, e é renovável.</p>
+<p><strong>Artigo 37°</strong> A posse dá-se na primeira sessão da Câmara dos Comuns após a proclamação.</p>
+<p><strong>Artigo 38°</strong> Perde o mandato o deputado que:</p>
+<p class="inciso">I — deixar de comparecer a três sessões consecutivas, salvo licença;</p>
+<p class="inciso">II — for condenado por decisão transitada em julgado, enquanto durarem os efeitos;</p>
+<p class="inciso">III — renunciar, por escrito ao SMRC;</p>
+<p class="inciso">IV — infringir o Artigo 21 deste Ato.</p>
+<p><strong>Artigo 39°</strong> A vaga é preenchida pelo candidato seguinte na ordem da votação do mesmo colégio.</p>
+<h2>TÍTULO X — DO CALENDÁRIO E DAS DISPOSIÇÕES FINAIS</h2>
+<p><strong>Artigo 40°</strong> A primeira eleição realiza-se em até noventa dias contados da data em que o Reino atingir três cidadãos civis com inscrição ativa, e as seguintes a cada doze meses, em data fixada por decreto.</p>
+<p><strong>Artigo 41°</strong> Enquanto não houver cidadão eleito, a Câmara dos Comuns funciona pelos assentos de máquina, na forma do Artigo 33 do Ato Legislativo nº 04/2026.</p>
+<p><strong>Artigo 42°</strong> O SMRC publica, trinta dias antes de cada eleição, a relação dos eleitores aptos, dos suspensos e dos analfabetos declarados, com respeito ao sigilo dos dados pessoais.</p>
+<p><strong>Artigo 43°</strong> Este Ato Legislativo entra em vigor na data de sua publicação.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+  </div>
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 3 de novembro de 2026, em Kauan-Grado<br>Código de autenticação AL052026R8D62E832EF<br>SHA-256 8d62e832efae388c406ad64343b5c8aa…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 253.000 48" width="253.000" height="48" role="img" aria-label="Codigo de barras AL052026R8D62E832EF" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="27.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="36.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="58.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="61.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="113.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="116.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="122.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="127.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="139.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="146.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="151.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="160.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="168.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="171.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="179.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="181.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="190.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="195.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="201.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="204.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="212.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="217.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="224.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="227.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="235.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="239.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="241.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">AL052026R8D62E832EF</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador AL.05.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -68,6 +68,32 @@
     "publicado_em": "2026-10-19T16:32:40"
   },
   {
+    "designador": "AL.05.2026",
+    "titulo": "Ato Legislativo nº 05/2026",
+    "ementa": "Institui o Direito Eleitoral do Reino Martyniano, cria o colégio eleitoral e a figura do Delegado Real, fixa o corpo eleitoral, a elegibilidade, os partidos, os referendos, o contencioso e o mandato, e prevê o Soberano Tribunal Eleitoral do Reino Martyniano (STERM), na forma do Artigo 34 do Ato Legislativo nº 04/2026.",
+    "template": "atos/AL.05.2026.html",
+    "data": "03/11/2026",
+    "sha256": "8d62e832efae388c406ad64343b5c8aa13154698f3c40dfa54146441bba4226f",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Ato Legislativo",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T12:44:01"
+  },
+  {
+    "designador": "AL.06.2026",
+    "titulo": "Ato Legislativo nº 06/2026",
+    "ementa": "Recepciona o acervo normativo anterior à Reforma Institucional de 2026, fixa a sua vigência transitória, corrige defeitos de numeração e institui o programa de reforma do acervo.",
+    "template": "atos/AL.06.2026.html",
+    "data": "03/11/2026",
+    "sha256": "2d2f46faf8bc523fca07c57f07b501eec13e11eeea6d255d0278ece5c770c56c",
+    "publicado": true,
+    "orgao": "Coroa de Estado Martyniana",
+    "tipo": "Ato Legislativo",
+    "estado": "sancionado",
+    "publicado_em": "2026-11-03T12:44:01"
+  },
+  {
     "designador": "DR.21.2026",
     "titulo": "Decreto Real nº 21/2026",
     "ementa": "Dispõe sobre o Padrão Documental do Reino Martyniano e adota a sua versão 2.0.",

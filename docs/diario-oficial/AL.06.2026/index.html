@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Ato Legislativo nº 06/2026 — Diário Oficial do Reino Martyniano</title>
+<style>
+  /* ══ AS FONTES DO PADRÃO DOCUMENTAL (servidas localmente, sem CDN) ══ */
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond.ttf') format('truetype');
+    font-weight:400 700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'EB Garamond';
+    src:url('/static/fontes/EBGaramond-Italic.ttf') format('truetype');
+    font-weight:400 700; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:'Playfair Display';
+    src:url('/static/fontes/PlayfairDisplay-Variable.ttf') format('truetype');
+    font-weight:400 900; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    /* PADRÃO DOCUMENTAL DO REINO MARTYNIANO — v2.0 (19/10/2026) */
+    --papel:#ffffff;
+    --tinta:#1c1a18;
+    --ouro:#b08d42;
+    --ouro-escuro:#8a6a1e;
+    --azul:#10213a;
+    --marrom:#4a3d28;
+    --carvao:#2a2116;
+    --cinza-assinatura:#6b5a3e;
+    --cinza-pagina:#8a7a5c;
+
+    --site-fundo:#070d1c;
+    --site-texto:#f0f4fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--site-fundo);color:var(--site-texto);
+       font-family:'EB Garamond',Georgia,serif;padding:0 0 70px}
+
+  /* ── A FOLHA DO ATO ─────────────────────────────────────── */
+  .folha-ato{
+    max-width:880px;
+    margin:44px auto 0;
+    background:var(--papel);
+    border-radius:3px;
+    box-shadow:0 3px 26px rgba(0,0,0,.35);
+    padding:56px 68px 64px;
+    color:var(--tinta);
+    hyphens:none;
+    -webkit-hyphens:none;
+    text-align:left;
+  }
+  .folha-ato .filete{
+    height:1px;
+    background:var(--ouro);
+    opacity:.55;
+    margin:0 auto 34px;
+    max-width:760px;
+  }
+
+  /* ── CABEÇA DO ATO ──────────────────────────────────────── */
+  .cabeca-ato{
+    text-align:center;
+    margin-bottom:40px;
+  }
+  /* brasão sem quadro, no alto, centralizado */
+  .cabeca-ato .brasao-ato{
+    width:118px; height:104px;
+    object-fit:contain;
+    display:block; margin:0 auto 22px;
+  }
+  /* país em versaletes espaçados */
+  .cabeca-ato .pais{
+    font-size:13px; font-weight:700;
+    letter-spacing:5px; text-transform:uppercase;
+    color:var(--azul); margin:0 0 12px;
+  }
+  /* tipo de ato em Playfair */
+  .cabeca-ato .tipo-ato{
+    font-family:'Playfair Display',serif;
+    font-size:34px; font-weight:700; line-height:1.15;
+    color:var(--azul); margin:0 0 6px;
+    letter-spacing:1px;
+  }
+  /* número em ouro */
+  .cabeca-ato .numero-ato{
+    font-size:13px; font-weight:700;
+    letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--ouro-escuro); margin:0 0 34px;
+  }
+  /* ementa centralizada (regular, como no PDF) */
+  .cabeca-ato .ementa{
+    font-size:15px; line-height:1.65;
+    color:var(--carvao); margin:0 auto; max-width:640px;
+  }
+
+  /* ── BLOCO DE APROVAÇÃO (opcional) ──────────────────────── */
+  .aprovacao{
+    margin:0 0 38px;
+    border-top:1px solid var(--ouro);
+    border-bottom:1px solid var(--ouro);
+  }
+  .aprovacao-linha{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:10px 4px; font-size:13.5px; line-height:1.5;
+  }
+  .aprovacao-linha .casa{color:var(--marrom)}
+  .aprovacao-linha .data{color:var(--azul); font-weight:700; letter-spacing:.4px}
+
+  /* ── CORPO ──────────────────────────────────────────────── */
+  .corpo-ato p{
+    font-size:15.5px; line-height:1.9;
+    margin:0 0 16px;
+    text-align:left;
+    hyphens:none;
+    -webkit-hyphens:none;
+  }
+  /* proclamação ("P R O M U L G A M O S :") */
+  .corpo-ato p.proclamacao{
+    margin:6px 0 16px;
+    font-weight:700;
+  }
+  /* fecho ("Registre-se..." / "O Rei o deseja.") */
+  .corpo-ato p.fecho{
+    text-align:center;
+    font-weight:700;
+    margin:22px 0 0;
+  }
+  /* incisos (I, II, III...) — recuados, como no PDF */
+  .corpo-ato p.inciso{
+    padding-left:32px;
+    margin:0 0 8px;
+  }
+  /* parágrafos (§ 1°, Parágrafo único) — recuados */
+  .corpo-ato p.paragrafo{
+    padding-left:20px;
+  }
+  /* títulos — TÍTULO I, II... */
+  .corpo-ato h2{
+    font-family:'Playfair Display',serif;
+    font-size:18px; font-weight:700; color:var(--ouro-escuro);
+    text-align:center; letter-spacing:.5px;
+    margin:40px 0 16px; line-height:1.35;
+  }
+  /* capítulos — CAPÍTULO I, II... */
+  .corpo-ato h3{
+    font-size:13px; font-weight:700; letter-spacing:1.8px;
+    text-transform:uppercase; color:var(--marrom);
+    margin:28px 0 12px; text-align:center; line-height:1.45;
+  }
+  /* número de artigo em destaque */
+  .corpo-ato p > strong:first-child{color:var(--carvao)}
+  .corpo-ato strong{color:var(--carvao)}
+  .corpo-ato hr{
+    border:0; border-top:1px solid var(--ouro);
+    opacity:.4; margin:34px 0;
+  }
+  /* tabela do anexo (relação de atos recepcionados) */
+  .corpo-ato table.anexo-tabela{
+    width:100%; border-collapse:collapse; margin:6px 0 22px;
+    font-size:12.5px; line-height:1.55; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th,
+  .corpo-ato table.anexo-tabela td{
+    border:1px solid var(--ouro); padding:6px 8px; vertical-align:top; text-align:left;
+  }
+  .corpo-ato table.anexo-tabela th{
+    background:#faf6ec; color:var(--ouro-escuro); font-weight:700;
+    letter-spacing:.4px; font-size:11px; text-transform:uppercase;
+  }
+  .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
+
+  /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
+  .fecho-ato{
+    margin-top:54px;
+    text-align:center;
+  }
+  .fecho-ato .cifra{
+    width:88px; height:88px; object-fit:contain;
+    display:block; margin:0 auto 18px;
+  }
+  .fecho-ato .assinatura-imagem{
+    width:230px; height:138px; object-fit:contain;
+    display:block; margin:0 auto 6px;
+  }
+  .fecho-ato .nome{
+    font-family:'Playfair Display',serif;
+    font-size:24px; font-weight:700; color:var(--azul);
+    margin:0 0 4px;
+  }
+  .fecho-ato .cargo{
+    font-size:13px; color:var(--marrom); margin:0 0 22px;
+  }
+  .fecho-ato .assinatura-digital{
+    font-size:12px; line-height:1.7;
+    color:var(--cinza-assinatura); margin:0 0 44px;
+  }
+  .fecho-ato .chancela{
+    width:120px; height:120px; object-fit:contain;
+    display:block; margin:0 auto 10px;
+  }
+  .fecho-ato .rotulo-chancela{
+    font-size:10px; font-weight:700; letter-spacing:2.6px;
+    text-transform:uppercase; color:var(--ouro-escuro);
+    margin:0 0 34px;
+  }
+  .fecho-ato .codigo-barras{
+    display:block; margin:0 auto;
+  }
+  .fecho-ato .codigo-numero{
+    font-size:11px; letter-spacing:2px;
+    color:var(--azul); margin:12px 0 30px;
+    font-family:'EB Garamond',Georgia,serif;
+  }
+  .fecho-ato .registro{
+    font-size:11px; line-height:1.7;
+    color:var(--cinza-assinatura);
+  }
+
+  @media (max-width:760px){
+    .folha-ato{padding:32px 22px 38px; margin-top:22px}
+    .cabeca-ato .tipo-ato{font-size:24px}
+    .corpo-ato p{font-size:14.5px; line-height:1.8}
+    .fecho-ato .assinatura-imagem{width:190px; height:114px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ A FOLHA DO ATO ══════════════ -->
+<div class="folha-ato">
+
+  <div class="filete"></div>
+
+  <!-- CABEÇA -->
+  <header class="cabeca-ato">
+    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <p class="pais">REINO MARTYNIANO</p>
+    <h1 class="tipo-ato">Ato Legislativo</h1>
+    <p class="numero-ato">Nº 06/2026</p>
+    <p class="ementa">Recepciona o acervo normativo anterior à Reforma Institucional de 2026, fixa a sua vigência transitória, corrige defeitos de numeração e institui o programa de reforma do acervo.</p>
+  </header>
+
+  
+
+  <!-- CORPO -->
+  <div class="corpo-ato">
+<p>Nós, Kauan Martynius Rex I, Sua Majestade Real, o Rei Martyniano, pela Graça de Javé Todo-Poderoso e pela vontade do Povo Martyniano, no exercício da função legislativa que a Constituição do Reino Martyniano nos confere, e considerando que a Reforma Institucional de 2026 sucedeu ordem normativa anterior sem que esta houvesse sido formalmente recebida; considerando que o acervo anterior é a base material do que ainda se deve reformar; e considerando que recepção sem vigência não serve ao governo e vigência sem registro serve ao arbítrio,</p>
+<p class="proclamacao">P R O M U L G A M O S :</p>
+<h2>TÍTULO I — DA RECEPÇÃO</h2>
+<p><strong>Artigo 1°</strong> Ficam recepcionados os quarenta e dois atos normativos anteriores à Reforma Institucional de 2026, publicados na Gazeta do Reino, relacionados no Anexo único deste Ato, que dele é parte integrante.</p>
+<p><strong>Artigo 2°</strong> A recepção é de acervo, não de mérito: recebe-se o ato como documento normativo existente, sem que a recepção importe juízo de conformidade com a ordem constitucional vigente.</p>
+<p><strong>Artigo 3°</strong> O acervo recepcionado integra o patrimônio normativo do Reino Martyniano e fica depositado no Diário Oficial, com registro de origem, data e estado de vigência de cada ato.</p>
+<h2>TÍTULO II — DA VIGÊNCIA TRANSITÓRIA</h2>
+<p><strong>Artigo 4°</strong> Os atos recepcionados permanecem em vigor, em caráter transitório, naquilo que não contrariar a Constituição de 2026, os Atos Legislativos n° 01 a 04 de 2026 e este Ato.</p>
+<p><strong>Artigo 5°</strong> Havendo conflito entre ato recepcionado e norma posterior, prevalece a norma posterior, e o conflito é registrado em nota de recepção.</p>
+<p><strong>Artigo 6°</strong> A vigência transitória cessa com a substituição do ato por norma nova, com a sua revogação expressa ou com o término do prazo do programa de reforma instituído no Artigo 9°.</p>
+<h2>TÍTULO III — DA NOMENCLATURA E DOS DEFEITOS</h2>
+<p><strong>Artigo 7°</strong> Nos atos recepcionados, a expressão "Reino de Martina" lê-se "Reino Martyniano", e as demais nomenclaturas heráldicas e institucionais seguem a atualização já operada pelo Ato Legislativo n° 02/2026.</p>
+<p><strong>Artigo 8°</strong> Ficam registrados, para os devidos efeitos, os seguintes defeitos do acervo:</p>
+<p class="inciso">I , o Decreto Real n° 02/2026, de 2 de fevereiro de 2026, que dispõe sobre os prazos de entrega documental, é renumerado como Decreto Real n° 02-A/2026, por colidir com o Decreto Real n° 02/2026, de 13 de janeiro de 2026;</p>
+<p class="inciso">II , o Decreto-Lei n° 03.01/2026, que determinava os símbolos nacionais, foi revogado pelo Decreto-Lei n° 12.03/2026, e assim fica registrado, recepcionando-se o ato e a sua revogação;</p>
+<p class="inciso">III , o Decreto Real n° 02/2026, de 13 de janeiro de 2026, revoga a Lei Nacional n° 12/2025, ato que não se encontra publicado na Gazeta e cuja ausência fica declarada.</p>
+<p class="paragrafo">Parágrafo único. A ausência referida no inciso III não suspende a recepção nem impede a vigência dos demais atos, e a Coroa determina a busca do documento para incorporação ao acervo.</p>
+<h2>TÍTULO IV — DO PROGRAMA DE REFORMA</h2>
+<p><strong>Artigo 9°</strong> Fica instituído o Programa de Reforma do Acervo Recepcionado, pelo qual cada ato recepcionado será examinado, classificado e substituído por norma nova, na ordem de prioridade que a Coroa fixar.</p>
+<p class="paragrafo">Parágrafo único. São matérias de exame prioritário: a defesa e as forças do Reino; a administração pública e o sistema de cargos; a identidade nacional e a cidadania; o Código Penal e os atos penais; a nobreza e as ordens honoríficas; e os símbolos nacionais.</p>
+<p><strong>Artigo 10°</strong> O exame de cada ato produz nota de recepção com um dos seguintes resultados: manutenção, com atualização de nomenclatura; revogação expressa; ou substituição por norma nova.</p>
+<p><strong>Artigo 11°</strong> O acervo recepcionado não pode ser invocado para fundar decisão que contrarie a ordem constitucional vigente, ainda que o ato esteja em vigor transitório.</p>
+<h2>TÍTULO V — DAS DISPOSIÇÕES FINAIS</h2>
+<p><strong>Artigo 12°</strong> O Anexo único deste Ato é publicado no Diário Oficial ao lado do ato, e a relação passa a ser o registro oficial do acervo anterior à Reforma.</p>
+<p><strong>Artigo 13°</strong> Este Ato Legislativo entra em vigor na data de sua publicação.</p>
+<p class="fecho">Registre-se, Publique-se e Cumpra-se.</p>
+<p class="fecho">O Rei o deseja.</p>
+<h2>ANEXO ÚNICO — RELAÇÃO DOS ATOS RECEPCIONADOS</h2>
+<table class="anexo-tabela">
+<thead><tr><th>N°</th><th>Ato</th><th>Natureza</th><th>Data</th><th>Ementa</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>DECRETO-LEI N° 01.01/2026</td><td>Decreto-Lei</td><td>01/01/2026</td><td>PROMULGA A CONSTITUIÇÃO DO REINO DE MARTINA E DA OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>2</td><td>DECRETO-LEI N° 02.01/2026</td><td>Decreto-Lei</td><td>01/01/2026</td><td>DETERMINA OS TÍTULOS DE NOBREZA E OS PROTOCOLOS</td></tr>
+<tr><td>3</td><td>DECRETO-LEI N° 03.01/2026</td><td>Decreto-Lei</td><td>08/01/2026</td><td>DETERMINA OS SÍMBOLOS NACIONAIS</td></tr>
+<tr><td>4</td><td>DECRETO-LEI N° 04.01/2026</td><td>Decreto-Lei</td><td>13/01/2026</td><td>ESTABELECE O REGIME REMOTO E HÍBIRIDO NO SERVIÇO PÚBLICO MARTYNIANO</td></tr>
+<tr><td>5</td><td>DECRETO-LEI N° 05.01/2026</td><td>Decreto-Lei</td><td>14/01/2026</td><td>DA CRIAÇÃO DO SERVIÇO SECRETO DO REINO DE MARTINA, DOS MECANISMOS DE INTERVENÇÃO DIRETA DA COROA, DO CORPO DE GUARDA REAL MARTYNIANO E DO CORPO MARTYNIANO DE GUARDA PESSOAL</td></tr>
+<tr><td>6</td><td>DECRETO-LEI N° 06.01/2026</td><td>Decreto-Lei</td><td>15/01/2026</td><td>DA CRIAÇÃO DA GUARDA NACIONAL DO REINO DE MARTINA</td></tr>
+<tr><td>7</td><td>DECRETO-LEI N° 07.01/2026</td><td>Decreto-Lei</td><td>15/01/2026</td><td>DA CRIAÇÃO DA GENDARMERIA DO REINO DE MARTINA E DO VOBOZOEL</td></tr>
+<tr><td>8</td><td>DECRETO-LEI N° 08.01/2026</td><td>Decreto-Lei</td><td>23/01/2026</td><td>CRIA O SISTEMA MARTYNIANO DE REGISTRO E CADASTRO (SMRC)</td></tr>
+<tr><td>9</td><td>DECRETO-LEI N° 09.01/2026</td><td>Decreto-Lei</td><td>23/01/2026</td><td>ADMITE OS TIPOS DE PESSOAS JURÍDICAS E SUAS CLASSFICAÇÕES</td></tr>
+<tr><td>10</td><td>DECRETO-LEI N° 10.02/2026</td><td>Decreto-Lei</td><td>03/02/2026</td><td>DO RECONHECIMENTO E DAS RELAÇÕES PARADIPLOMÁTICAS</td></tr>
+<tr><td>11</td><td>DECRETO-LEI N° 11.02/2026</td><td>Decreto-Lei</td><td>21/02/2026</td><td>DA REGULARIZAÇÃO DA SUBDIVISÃO TERRITORIAL E OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>12</td><td>DECRETO-LEI N° 12.03/2026</td><td>Decreto-Lei</td><td>12/03/2026</td><td>DA REFORMULAÇÃO DOS SÍMBOLOS NACIONAIS E OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>13</td><td>DECRETO-LEI N° 13.03/2026</td><td>Decreto-Lei</td><td>18/03/2026</td><td>DOS DIREITOS DA PESSOA COM DEFICIÊNCIA E OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>14</td><td>DECRETO-LEI N° 14.03/2026</td><td>Decreto-Lei</td><td>23/03/2026</td><td>DA INSTITUIÇÃO DO CÓDIGO PENAL MARTYNIANO E OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>15</td><td>DECRETO-LEI N° 15.04/2026</td><td>Decreto-Lei</td><td>12/04/2026</td><td>DISPÕE DA IDENTIDADE NACIONAL, A NATUREZA DA CIDADANIA E DÁ OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>16</td><td>DECRETO-LEI N° 16.04/2026</td><td>Decreto-Lei</td><td>18/04/2026</td><td>INSTITUI OS VISTOS ESPECIAIS DO REINO DE MARTINA, DISCIPLINA AS CATEGORIAS, DIREITOS, DEVERES, REQUISITOS, PROCEDIMENTOS, CRIA O PROGRAMA DE INTEGRAÇÃO CÍVICA (PIC) E ESTABELECE REMISSÃO AO CÓDIGO PENAL, E DÁ OUTRAS PROVIDÊNCIAS.</td></tr>
+<tr><td>17</td><td>DECRETO-LEI N° 17.04/2026</td><td>Decreto-Lei</td><td>20/04/2026</td><td>DAS FÓRMULAS, PROTOCOLOS E IDENTIDADE DA MÁQUINA PÚBLICA</td></tr>
+<tr><td>18</td><td>DECRETO-LEI N° 18.04/2026</td><td>Decreto-Lei</td><td>26/04/2026</td><td>DO SISTEMA DE CARGOS, ENCARGOS E ÓRGÃOS DA ADMINISTRAÇÃO PÚBLICA</td></tr>
+<tr><td>19</td><td>DECRETO-LEI N° 19.04/2026</td><td>Decreto-Lei</td><td>26/04/2026</td><td>DAS ORDENS HONORÍFICAS E DOS TÍTULOS HONORÍFICAS E DOS TÍTULOS HONORÍFICOS DE ACRÉSCIMO</td></tr>
+<tr><td>20</td><td>DECRETO-LEI N° 20.04/2026</td><td>Decreto-Lei</td><td>30/04/2026</td><td>COMPLEMENTA O DECRETO-LEI N° 17.04/2026 E DÁ OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>21</td><td>DECRETO-LEI N° 21.04/2026</td><td>Decreto-Lei</td><td>30/04/2026</td><td>INSTITUI O BRASÃO DE ARMAS SOBERANO E A VERSÃO SIMPLIFICADA PARA A MÁQUINA PÚBLICA, E DÁ OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>22</td><td>DECRETO-LEI N° 22.06/2026</td><td>Decreto-Lei</td><td>02/06/2026</td><td>INSTITUI O CÓDIGO DE DEFESA DA HONRA NACIONAL, ESTABELECE PRINCÍPIOS PARA A PROTEÇÃO DO PROPÓSITO, DAS INSTITUIÇÕES, DOS SÍMBOLOS E DA FÉ DO REINO DE MARTINA, E AUTORIZA A EDIÇÃO DE ATOS DO CÓDIGO PENAL PARA TIPIFICAÇÃO DE CRIMES CORRELATOS.</td></tr>
+<tr><td>23</td><td>DECRETO-LEI N° 23.07/2026</td><td>Decreto-Lei</td><td>04/07/2026</td><td>Dispõe sobre a proibição de ordens secretas e a regulamentação de ordens discretas no âmbito do Reino de Martina.</td></tr>
+<tr><td>24</td><td>DECRETO-LEI N° 24.08/2026</td><td>Decreto-Lei</td><td>02/08/2026</td><td>Determina que o Conselho da Coroa de Estado atua como assembleia constituinte para a reforma legislativa e política do Reino de Martina e dá outras providências.</td></tr>
+<tr><td>25</td><td>DECRETO REAL N° 01/2026</td><td>Decreto Real</td><td>09/01/2026</td><td>DISPÕE DA CRIAÇÃO DA DEFESA CIVIL DO REINO DE MARTINA</td></tr>
+<tr><td>26</td><td>DECRETO REAL N° 02/2026</td><td>Decreto Real</td><td>13/01/2026</td><td>REVOGA A LEI NACIONAL N° 12/102025 E RECRIA O SOBERANO CARTÓRIO NACIONAL DE MARTINA (SCNM)</td></tr>
+<tr><td>27</td><td>DECRETO REAL N° 02-A/2026</td><td>Decreto Real</td><td>02/02/2026</td><td>DA DISCIPLINAÇÃO DOS PRAZOS DE ENTREGA DOCUMENTAL</td></tr>
+<tr><td>28</td><td>DECRETO REAL N° 03/2026</td><td>Decreto Real</td><td>21/02/2026</td><td>DO RECONHECIMENTO ASSOCIATIVO COM DAS KREUZREICH</td></tr>
+<tr><td>29</td><td>DECRETO REAL N° 04/2026</td><td>Decreto Real</td><td>23/02/2026</td><td>DA CRIAÇÃO DO CENTRO MÍDIA, RECRIAÇÃO DA AGÊNCIA MARTINA UNIDA E OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>30</td><td>DECRETO REAL N° 05/2026</td><td>Decreto Real</td><td>08/04/2026</td><td>DA CRIAÇÃO DA BIBLIOTECA NACIONAL DO REINO DE MARTINA</td></tr>
+<tr><td>31</td><td>DECRETO REAL N° 06/2026</td><td>Decreto Real</td><td>08/04/2026</td><td>INSTITUI O MECANISMO PROVISÓRIO DE TESTE E VALIDAÇÃO DAS UNIDADES EMANCIPADAS E DÁ OUTRAS PROVIDÊNCIAS</td></tr>
+<tr><td>32</td><td>DECRETO REAL N° 07/2026</td><td>Decreto Real</td><td>18/04/2026</td><td>ALTERA O RECONHECIMENTO PARADIPLOMÁTICO DE ENTIDADES EXTERNAS, CONFERE NOVAS CATEGORIAS A ESTADOS E MICRONAÇÕES E DÁ OUTRAS PROVIÊNCIAS</td></tr>
+<tr><td>33</td><td>DECRETO REAL N° 08/2026</td><td>Decreto Real</td><td>01/06/2026</td><td>Declara estado de emergência tecnológica no âmbito da Administração da Coroa de Estado, autoriza medidas excepcionais para restabelecimento da funcionalidade dos sistemas oficiais e dá outras providências.</td></tr>
+<tr><td>34</td><td>DECRETO REAL N° 09/2026</td><td>Decreto Real</td><td>07/06/2026</td><td>Declara Estado de Sítio e Mobilização Total no Reino de Martina, invoca a Prerrogativa Real de Assunção Temporária e o Poder Moderador, e dá outras providências.</td></tr>
+<tr><td>35</td><td>DECRETO REAL N° 10/2026</td><td>Decreto Real</td><td>20/06/2026</td><td>Revoga integralmente os Decretos Reais n° 08/2026 e n° 09/2026, restabelece a plena normalidade institucional e administrativa do Reino, e dá outras providências.</td></tr>
+<tr><td>36</td><td>DECRETO REAL N° 11/2026</td><td>Decreto Real</td><td>05/07/2026</td><td>Cria a Unidade Martynana de Serviços Integrados (UMSI), transfere a gestão do Diário Oficial do Reino de Martina (Gazeta do Reino) à nova unidade, centraliza os serviços públicos digitais do Estado e dá outras providências.</td></tr>
+<tr><td>37</td><td>RESOLUÇÃO SCNM 001/2026</td><td>Resolução SCNM</td><td>23/01/2026</td><td>DA CRIAÇÃO DO PORTAL OFICIAL E DA PUBLICAÇÃO DE TABELAS DO SMRC</td></tr>
+<tr><td>38</td><td>RESOLUÇÃO SCNM 002/2026</td><td>Resolução SCNM</td><td>24/01/2026</td><td>ESTABELECE OS PARÂMETROS DO REGISTRO DE PESSOA FÍSICA</td></tr>
+<tr><td>39</td><td>RESOLUÇÃO SCNM 003/2026</td><td>Resolução SCNM</td><td>24/01/2026</td><td>DOS CRITÉRIOS E PROCEDIMENTOS PARA RECONHECIMENTO DE FIRMA</td></tr>
+<tr><td>40</td><td>ATO CONSTITUCIONAL N° 1</td><td>Ato Constitucional</td><td>04/05/2026</td><td>(sem ementa publicada)</td></tr>
+<tr><td>41</td><td>CONSTITUIÇÃO DO REINO DE MARTINA</td><td>Constituição</td><td>01/01/2026</td><td>Texto promulgado em 1º de janeiro de 2026</td></tr>
+<tr><td>42</td><td>ESTATUTO DA SOCIEDADE DOS MICROESTADOS PARAESTATAIS</td><td>Estatuto</td><td>30/01/2026</td><td>Estabelece a criação da Sociedade dos Microestados Paraestatais e define disposições transitórias</td></tr>
+</tbody></table>
+  </div>
+
+  <!-- FECHO -->
+  <footer class="fecho-ato">
+    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <p class="nome">Kauan Martynius Rex I</p>
+    <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
+    <p class="assinatura-digital">Assinado digitalmente em 3 de novembro de 2026, em Kauan-Grado<br>Código de autenticação AL062026R2D2F46FAF8<br>SHA-256 2d2f46faf8bc523fca07c57f07b501ee…</p>
+    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <p class="rotulo-chancela">Chancela da Coroa</p>
+    <svg class="codigo-barras" viewBox="0 0 253.000 48" width="253.000" height="48" role="img" aria-label="Codigo de barras AL062026R2D2F46FAF8" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="23.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="27.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="36.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="39.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="45.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="49.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="57.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="61.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="72.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="81.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="89.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="103.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="105.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="113.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="118.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="122.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="127.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="140.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="146.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="151.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="160.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="168.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="172.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="179.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="184.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="188.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="192.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="201.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="206.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="212.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="215.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="223.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="225.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="230.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="235.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="239.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="241.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
+    <p class="codigo-numero">AL062026R2D2F46FAF8</p>
+    <p class="registro">Registrado no Soberano Cartório Nacional do Reino Martyniano · Fé pública · Designador AL.06.2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
