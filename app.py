@@ -233,8 +233,14 @@ def ato_publicado(designador):
         "SHA-256 %s" % (data_assinatura, codigo, sha[:32] + "…")
     )
 
+    import os as _os
+    _raiz = _os.path.dirname(_os.path.abspath(__file__))
+    _pdf = _os.path.join(_raiz, "docs", "diario-oficial", designador, designador + ".pdf")
+    tem_pdf = _os.path.exists(_pdf)
+
     return render_template(
         '_folha_ato.html',
+        TEM_PDF=tem_pdf,
         TITULO=ato.get("titulo") or designador,
         PAIS=PAIS,
         TIPO_ATO=tipo,

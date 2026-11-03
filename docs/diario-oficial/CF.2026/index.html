@@ -173,6 +173,16 @@
   }
   .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
 
+  /* ── LINK DO PDF DE ARQUIVO ─────────────────────────────── */
+  .baixar-pdf{
+    margin:28px 0 6px; text-align:center; font-size:13px; letter-spacing:.5px;
+  }
+  .baixar-pdf a{
+    color:var(--ouro-escuro, #8a6a1e); text-decoration:none;
+    border-bottom:1px solid rgba(138,106,30,.45); padding-bottom:2px;
+  }
+  .baixar-pdf a:hover{ border-bottom-color:#8a6a1e; }
+
   /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
   .fecho-ato{
     margin-top:54px;
@@ -237,7 +247,7 @@
 
   <!-- CABEÇA -->
   <header class="cabeca-ato">
-    <img class="brasao-ato" src="../../static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
+    <img class="brasao-ato" src="/static/brasao_transparente.png" alt="Brasão de Armas Soberano do Reino Martyniano">
     <p class="pais">REINO MARTYNIANO</p>
     <h1 class="tipo-ato">Constituição</h1>
     <p class="numero-ato">2026</p>
@@ -354,14 +364,16 @@
 <p class="assinatura-digital">Documento assinado digitalmente por Sua Majestade Real, o Rei Martyniano, com a Chave Real 2026.</p>
   </div>
 
+  
+
   <!-- FECHO -->
   <footer class="fecho-ato">
-    <img class="cifra" src="../../static/cifra_real_transparente.png" alt="Cifra Real">
-    <img class="assinatura-imagem" src="../../static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
+    <img class="cifra" src="/static/cifra_real_transparente.png" alt="Cifra Real">
+    <img class="assinatura-imagem" src="/static/assinatura_rei.png" alt="Assinatura de Sua Majestade">
     <p class="nome">Kauan Martynius Rex I</p>
     <p class="cargo">Sua Majestade Real, o Rei Martyniano</p>
     <p class="assinatura-digital">Assinado digitalmente em 6 de setembro de 2026, em Kauan-Grado<br>Código de autenticação CF2026R272CFC3031<br>SHA-256 272cfc3031a78b9d0dccbf4748708d77…</p>
-    <img class="chancela" src="../../static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
+    <img class="chancela" src="/static/chancela_coroa_martyniano.png" alt="Chancela da Coroa">
     <p class="rotulo-chancela">Chancela da Coroa</p>
     <svg class="codigo-barras" viewBox="0 0 231.000 48" width="231.000" height="48" role="img" aria-label="Codigo de barras CF2026R272CFC3031" xmlns="http://www.w3.org/2000/svg"><rect x="10.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="13.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="16.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="21.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="25.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="29.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="32.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="36.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="41.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="43.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="47.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="52.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="54.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="57.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="61.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="65.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="69.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="74.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="76.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="80.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="84.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="87.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="92.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="94.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="98.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="102.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="107.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="109.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="113.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="116.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="120.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="124.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="129.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="131.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="135.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="139.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="142.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="146.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="151.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="153.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="157.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="161.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="164.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="166.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="170.000" y="0" width="4.000" height="48" fill="#1c1a18"/><rect x="175.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="178.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="181.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="186.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="189.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="194.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="197.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="200.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="205.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="208.000" y="0" width="2.000" height="48" fill="#1c1a18"/><rect x="213.000" y="0" width="3.000" height="48" fill="#1c1a18"/><rect x="217.000" y="0" width="1.000" height="48" fill="#1c1a18"/><rect x="219.000" y="0" width="2.000" height="48" fill="#1c1a18"/></svg>
     <p class="codigo-numero">CF2026R272CFC3031</p>

@@ -173,6 +173,16 @@
   }
   .corpo-ato table.anexo-tabela td{ color:var(--tinta); }
 
+  /* ── LINK DO PDF DE ARQUIVO ─────────────────────────────── */
+  .baixar-pdf{
+    margin:28px 0 6px; text-align:center; font-size:13px; letter-spacing:.5px;
+  }
+  .baixar-pdf a{
+    color:var(--ouro-escuro, #8a6a1e); text-decoration:none;
+    border-bottom:1px solid rgba(138,106,30,.45); padding-bottom:2px;
+  }
+  .baixar-pdf a:hover{ border-bottom-color:#8a6a1e; }
+
   /* ── FECHO / ASSINATURA / CHANCELA / CÓDIGO ─────────────── */
   .fecho-ato{
     margin-top:54px;
@@ -260,6 +270,10 @@
   <div class="corpo-ato">
 {{ CORPO|safe }}
   </div>
+
+  {% if TEM_PDF %}
+  <p class="baixar-pdf"><a href="./{{ DESIGNADOR }}.pdf" download>Baixar este ato em PDF ({{ DESIGNADOR }})</a></p>
+  {% endif %}
 
   <!-- FECHO -->
   <footer class="fecho-ato">
